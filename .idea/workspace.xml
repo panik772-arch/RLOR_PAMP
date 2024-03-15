@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="some messy commit. Idk what im doin">
+      <change afterPath="$PROJECT_DIR$/RLOR/envs/heuristic_solver.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/envs/plot_env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/envs/test_env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710409176/events.out.tfevents.1710409176.VF-070237N.14872.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710409176/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710428847/events.out.tfevents.1710428847.VF-070237N.12572.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710428847/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710429062/events.out.tfevents.1710429062.VF-070237N.19792.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710429062/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710432982/events.out.tfevents.1710432982.VF-070237N.19680.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710432982/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710433072/events.out.tfevents.1710433072.VF-070237N.16668.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710433072/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710433462/events.out.tfevents.1710433462.VF-070237N.8388.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710433462/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434559/events.out.tfevents.1710434559.VF-070237N.14472.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434559/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434688/events.out.tfevents.1710434688.VF-070237N.15076.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434688/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434756/events.out.tfevents.1710434756.VF-070237N.21492.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434756/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435293/events.out.tfevents.1710435293.VF-070237N.15888.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435293/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435644/events.out.tfevents.1710435644.VF-070237N.19736.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435644/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435695/events.out.tfevents.1710435695.VF-070237N.18544.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435695/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710436362/events.out.tfevents.1710436362.VF-070237N.17292.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710436362/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710436403/events.out.tfevents.1710436403.VF-070237N.17496.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710436403/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR/ppo_or.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/ppo_or.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <branch-grouping>
+      <option value="directory" />
+      <option value="repository" />
+    </branch-grouping>
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Anaconda3/envs/rlor_vrp/Lib/site-packages/gym/envs/registration.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/Anaconda3/envs/rlor_vrp/Lib/site-packages/numpy/core/arrayprint.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2cSCENABZmKuZFBjnbizfCBtUD6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/dein_el/PycharmProjects/rlor_vrp/data",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\data" />
+      <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\envs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.ppo_or">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="rlor_vrp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ppo_or" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rlor_vrp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RLOR" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/ppo_or.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.ppo_or" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="" />
+      <created>1708095480286</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708095480286</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Here I started to implement the vehicle fleet environment. Changed the context in RLOR, added the additional environment. The biggest issue is to implement def go_to() because it process the trajectories for ppo.">
+      <created>1710276793747</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710276793747</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Here I started to implement the vehicle fleet environment. Changed the context in RLOR, added the additional environment. The biggest issue is to implement def go_to() because it process the trajectories for ppo.">
+      <created>1710277083266</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710277083266</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/RLOR" />
+      <path value="$PROJECT_DIR$/rlor_vrp" />
+    </ignored-roots>
+    <MESSAGE value="Here I started to implement the vehicle fleet environment. Changed the context in RLOR, added the additional environment. The biggest issue is to implement def go_to() because it process the trajectories for ppo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Here I started to implement the vehicle fleet environment. Changed the context in RLOR, added the additional environment. The biggest issue is to implement def go_to() because it process the trajectories for ppo." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
+          <line>342</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
+          <line>273</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
+          <line>235</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>171</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/context.py</url>
+          <line>89</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
+          <line>223</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>147</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
+          <line>129</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
+          <line>180</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
