@@ -10,6 +10,7 @@ Here the authors also stated, the RL platforms handle end-2-end NCO different. R
 While original KOOL implementation only adjust the decoder wights with REINFORCE.
 However, when we use PPO, especially in CleanRL, we work with Trajectories. And this is a trick.
 CleanRL-> https://docs.cleanrl.dev/
+but the idea of learning on trajectories in POMO is from here: https://arxiv.org/pdf/2010.16011.pdf
 For PPO best practices, tricks and implementation read carefully: https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/
 In CleanRL these trajectories are directly implemented in the environment, whereby in RLLIB for example, we can use standart, simple environment without trajectories view.
 It SIMPLIFIES a lot! because the trajectories in the environment is a big pain and costs me 3 days to understand and adjust only one function -> go_to(self) in the cvrp_vehfleet_env
@@ -231,7 +232,7 @@ ____
 NEXT STEPS:
 
 TODO:
-* Write and check the environment! Write a small class and check and visualize how the environment is working only with 1 trajectory!
+*[Done] Write and check the environment! Write a small class and check and visualize how the environment is working only with 1 trajectory!
 * Try to deploy and train the model on cluster! Use some parallel computing and so on! 
 * Check the model and compare with the RLLIB
 * Check, if the agent behaves properly. If not, look in cvrp_flet_env class. I suppose, that the agent will pursuit to reduce the number of vehicles as quick as possible, to achieve minim reward! 

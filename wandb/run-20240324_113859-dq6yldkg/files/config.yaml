@@ -1,0 +1,129 @@
+wandb_version: 1
+
+exp_name:
+  desc: null
+  value: exp13_50_steps_LocalMachine
+seed:
+  desc: null
+  value: 1
+torch_deterministic:
+  desc: null
+  value: true
+cuda:
+  desc: null
+  value: true
+track:
+  desc: null
+  value: true
+wandb_project_name:
+  desc: null
+  value: rlor_finite_vehicle_fleet_env
+wandb_entity:
+  desc: null
+  value: null
+capture_video:
+  desc: null
+  value: false
+problem:
+  desc: null
+  value: cvrp_fleet
+env_id:
+  desc: null
+  value: cvrp-v1
+env_entry_point:
+  desc: null
+  value: envs.cvrp_vehfleet_env:CVRPFleetEnv
+total_timesteps:
+  desc: null
+  value: 6000000000
+learning_rate:
+  desc: null
+  value: 0.001
+weight_decay:
+  desc: null
+  value: 0
+num_envs:
+  desc: null
+  value: 1024
+num_steps:
+  desc: null
+  value: 50
+anneal_lr:
+  desc: null
+  value: true
+gamma:
+  desc: null
+  value: 0.99
+gae_lambda:
+  desc: null
+  value: 0.95
+num_minibatches:
+  desc: null
+  value: 8
+update_epochs:
+  desc: null
+  value: 2
+norm_adv:
+  desc: null
+  value: true
+clip_coef:
+  desc: null
+  value: 0.2
+clip_vloss:
+  desc: null
+  value: true
+ent_coef:
+  desc: null
+  value: 0.01
+vf_coef:
+  desc: null
+  value: 0.5
+max_grad_norm:
+  desc: null
+  value: 0.5
+target_kl:
+  desc: null
+  value: null
+n_traj:
+  desc: null
+  value: 50
+n_test:
+  desc: null
+  value: 1000
+multi_greedy_inference:
+  desc: null
+  value: true
+batch_size:
+  desc: null
+  value: 51200
+minibatch_size:
+  desc: null
+  value: 6400
+_wandb:
+  desc: null
+  value:
+    code_path: code/RLOR/ppo_or.py
+    python_version: 3.10.13
+    cli_version: 0.16.4
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1711276739.0
+    t:
+      1:
+      - 1
+      - 55
+      2:
+      - 1
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      - 35
+      4: 3.10.13
+      5: 0.16.4
+      8:
+      - 3
+      - 5
+      13: windows-amd64

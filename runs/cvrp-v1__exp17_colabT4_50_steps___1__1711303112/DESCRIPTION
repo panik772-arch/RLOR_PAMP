@@ -1,0 +1,28 @@
+LOOK HERE. https://wandb.ai/dl4log/rlor_finite_vehicle_fleet_env/runs/81dmsmua/overview?nw=nwuserdeinelija
+"model trained" -> WAS ACHIEVED in colab.
+
+March 24th, 2024 at 6:58:33 pm
+Duration
+1h 40m 31s
+Run path
+dl4log/rlor_finite_vehicle_fleet_env/81dmsmua
+Hostname
+d5928bce253d
+OS
+Linux-6.1.58+-x86_64-with-glibc2.35
+Python version
+3.10.12
+Python executable
+/usr/bin/python3
+Git repository
+git clone https://colab_train:@gitlab.dlr.de/StratGut/rl4log/rlor_vrp.git
+Git state
+git checkout -b "cvrp-v1__exp17_colabT4_50_steps___1__1711303112" fbc47f36e8eddf9c80f3e8766f47d644f811db0c
+Command
+/content/rlor_vrp/ppo_or.py --num-steps 50 --total-timesteps 20_000_000 --exp-name exp17_colabT4_50_steps_ --env-id cvrp-v1 --env-entry-point envs.cvrp_vehfleet_env:CVRPFleetEnv --problem cvrp_fleet --track True --wandb-project-name rlor_finite_vehicle_fleet_env
+System Hardware
+CPU count	1
+GPU count	1
+GPU type	Tesla T4
+W&B CLI Version
+0.16.4
