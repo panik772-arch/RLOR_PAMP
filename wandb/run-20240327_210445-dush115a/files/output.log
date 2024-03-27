@@ -1,0 +1,56 @@
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:31: UserWarning: [33mWARN: A Box observation space has an unconventional shape (neither an image, nor a 1D vector). We recommend flattening the observation to have only a 1D vector or use a custom policy to properly process the data. Actual observation shape: (50, 2)
+  logger.warn(
+WARNING:root:Data sepecified by (eval, 50) was not initialized. Attepmting to load it for the first time.
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:174: UserWarning: [33mWARN: Future gym versions will require that `Env.reset` can be passed a `seed` instead of using `Env.seed` for resetting the environment random number generator.
+  logger.warn(
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:187: UserWarning: [33mWARN: Future gym versions will require that `Env.reset` can be passed `options` to allow the environment initialisation to be passed additional information.
+  logger.warn(
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:195: UserWarning: [33mWARN: The result returned by `env.reset()` was not a tuple of the form `(obs, info)`, where `obs` is a observation and `info` is a dictionary containing additional information. Actual type: `<class 'dict'>`
+  logger.warn(
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:219: DeprecationWarning: [33mWARN: Core environment is written in old step API which returns one bool instead of two. It is recommended to rewrite the environment with new step API. 
+  logger.deprecation(
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:225: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(done, (bool, np.bool8)):
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:226: UserWarning: [33mWARN: Expects `done` signal to be a boolean, actual type: <class 'numpy.ndarray'>
+  logger.warn(
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:141: UserWarning: [33mWARN: The obs returned by the `step()` method was expecting numpy array dtype to be float32, actual type: float64
+  logger.warn(
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:165: UserWarning: [33mWARN: The obs returned by the `step()` method is not within the observation space.
+  logger.warn(f"{pre} is not within the observation space.")
+C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\gym\utils\passive_env_checker.py:252: UserWarning: [33mWARN: The reward returned by `step()` must be a float, int, np.integer or np.floating, actual type: <class 'numpy.ndarray'>
+  logger.warn(
+completed_episodes= 890
+[Train] global_step=51200
+             avg_episodic_return=-28.712921142578125
+             max_episodic_return=-20.493078231811523
+             avg_episodic_length=46.69775280898877
+SPS: 218
+completed_episodes= 885
+[Train] global_step=102400
+             avg_episodic_return=-25.835050582885742
+             max_episodic_return=-20.017108917236328
+             avg_episodic_length=47.103954802259885
+SPS: 218
+completed_episodes= 903
+[Train] global_step=153600
+             avg_episodic_return=-25.5593318939209
+             max_episodic_return=-19.736948013305664
+             avg_episodic_length=46.9545957918051
+Traceback (most recent call last):
+  File "C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\ppo_or.py", line 296, in <module>
+    _, newlogprob, entropy, newvalue, _ = agent.get_action_and_value_cached(
+  File "C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\models\attention_model_wrapper.py", line 119, in get_action_and_value_cached
+    x = self.backbone.decode(x, state)
+  File "C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\models\attention_model_wrapper.py", line 58, in decode
+    logits, glimpse = self.decoder.advance(cached_embeddings, state)
+  File "C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\models\nets\attention_model\decoder.py", line 198, in advance
+    logits, glimpse = self.calc_logits(query, glimpse_K, glimpse_V, logit_K, mask)
+  File "C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\models\nets\attention_model\decoder.py", line 207, in calc_logits
+    glimpse = self.glimpse(query, glimpse_K, glimpse_V, mask)
+  File "C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\dein_el\Anaconda3\envs\rlor_vrp\lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\models\nets\attention_model\multi_head_attention.py", line 144, in forward
+    out_heads = torch.matmul(torch.softmax(compatibility, dim=-1), value_heads)
+KeyboardInterrupt
