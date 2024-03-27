@@ -46,10 +46,11 @@ def colorline(x, y, z=None, cmap=plt.get_cmap('copper'), norm=plt.Normalize(0.0,
 
 def plot(coords, obs):
     x, y = coords.T
-    lc = colorline(x, y, cmap='Reds')
+    lc = colorline(x, y, cmap='brgyp')
     plt.axis('square')
     x, y = obs['observations'][0].T
     h = obs['demand'] / 4
     h = np.vstack([h * 0, h])
     plt.errorbar(x, y, h, fmt='None', elinewidth=2)
+    plt.show()
     return lc

@@ -4,6 +4,6 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RLOR" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/rlor_vrp_experiments" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rlor_vrp_gitlab" vcs="Git" />
   </component>
 </project>

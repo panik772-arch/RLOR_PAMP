@@ -1,0 +1,62 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-03-27T20:33:34.761013",
+    "startedAt": "2024-03-27T20:33:33.026128",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--num-steps",
+        "50",
+        "--total-timesteps",
+        "20_000_000",
+        "--exp-name",
+        "exp2.1_local_machine_after_refactoring_reward_shaping_",
+        "--env-id",
+        "cvrp-v1",
+        "--env-entry-point",
+        "envs.cvrp_vehfleet_env:CVRPFleetEnv",
+        "--problem",
+        "cvrp_fleet",
+        "--track",
+        "True",
+        "--wandb-project-name",
+        "rlor_finite_vehicle_fleet_env"
+    ],
+    "state": "running",
+    "program": "C:\\Users\\dein_el\\PycharmProjects\\rlor_vrp\\RLOR\\ppo_or.py",
+    "codePathLocal": "RLOR\\ppo_or.py",
+    "codePath": "RLOR\\ppo_or.py",
+    "git": {
+        "remote": "https://gitlab.dlr.de/StratGut/rl4log/rlor_vrp.git",
+        "commit": "5d0ad2250aa7fcd25cf1e35ba3a4601a0cba48d5"
+    },
+    "email": "Elija.Deineko@dlr.de",
+    "root": "C:/Users/dein_el/PycharmProjects/rlor_vrp",
+    "host": "VF-070237N",
+    "username": "dein_el",
+    "executable": "C:\\Users\\dein_el\\Anaconda3\\envs\\rlor_vrp\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1910.0,
+        "min": 0.0,
+        "max": 2112.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1910.0,
+            "min": 0.0,
+            "max": 2112.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 249.42990112304688,
+            "used": 218.90440368652344
+        }
+    },
+    "memory": {
+        "total": 15.682117462158203
+    }
+}

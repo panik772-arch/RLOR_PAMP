@@ -5,15 +5,21 @@ from RLOR.models.attention_model_wrapper import Agent
 from RLOR.wrappers.syncVectorEnvPomo import SyncVectorEnv
 from RLOR.wrappers.recordWrapper import RecordEpisodeStatistics
 from plot_rlor import plot
-
+from RLOR.envs.cvrp_vehfleet_env import CVRPFleetEnv
 if __name__ == "__main__":
     device = 'cpu'
-    ckpt_path = './runs/cvrp-v1__exp17_colabT4_50_steps___1__1711303112/ckpt/390.pt'
+
+    # './runs/cvrp-v1__exp17_colabT4_50_steps___1__1711303112/ckpt/390.pt' -> not working. returns to depot everytime
+
+    env_ = CVRPFleetEnv()
+
+    ckpt_path = "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3500.pt"
+
     agent = Agent(device=device, name='cvrp_fleet').to(device)
     agent.load_state_dict(torch.load(ckpt_path))
 
     env_id = 'cvrp-v1'
-    env_entry_point = 'envs.cvrp_vehfleet_env:CVRPFleetEnv'
+    env_entry_point = 'RLOR.envs.cvrp_vehfleet_env:CVRPFleetEnv'
     seed = 0
 
     gym.envs.register(
@@ -32,7 +38,6 @@ if __name__ == "__main__":
             return env
 
         return thunk
-
 
     envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=50))])
 

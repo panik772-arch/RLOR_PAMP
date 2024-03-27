@@ -1,0 +1,4 @@
+use class:
+generate_dataset.py
+->
+python generate_datasets.py  --data_dir data --name validation --problem vrp --dataset_size 1000 --graph_sizes (20, 50, 75, 100) --seed 1234

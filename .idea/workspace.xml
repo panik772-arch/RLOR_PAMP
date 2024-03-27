@@ -4,238 +4,131 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="commit for gitlab">
-      <change afterPath="$PROJECT_DIR$/plot_rlor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp17_colabT4_50_steps___1__1711303112/DESCRIPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711111788/events.out.tfevents.1711111813.VF-070237N.20088.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711111788/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112094/events.out.tfevents.1711112114.VF-070237N.18068.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112094/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112859/events.out.tfevents.1711112903.VF-070237N.18980.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112859/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/debug-cli.dein_el.log" afterDir="false" />
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well">
+      <change afterPath="$PROJECT_DIR$/RLOR/envs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/HOT_TO_GENERATE_DATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp100_test_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp100_validation_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp100_validation_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp20_test_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp20_validation_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp20_validation_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp50_test_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp50_validation_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp50_validation_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp75_test_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp75_validation_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp/vrp75_validation_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate_datasets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/Results.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/100.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1100.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1200.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1300.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1400.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1500.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1600.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1700.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1800.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1900.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/200.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2100.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2200.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2300.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2400.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2500.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2600.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2700.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2800.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2900.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/300.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3100.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3200.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3300.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3400.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3500.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/400.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/500.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/600.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/700.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/800.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/900.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/events.out.tfevents.1711632529.vf-argos.intra.dlr.de.9220.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/100.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/1000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/1100.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/1171.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/200.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/300.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/400.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/500.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/600.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/700.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/800.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/900.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/events.out.tfevents.1711627066.vf-athene.intra.dlr.de.15641.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/10.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/100.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/110.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/120.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/130.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/140.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/150.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/160.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/170.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/20.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/30.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/40.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/50.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/60.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/70.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/80.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/90.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/conda-environment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/diff.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/output.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/wandb-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/wandb-summary.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/logs/debug-internal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/logs/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/run-tsegupg3.wandb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rlor_vrp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rlor_vrp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR/envs/graph_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/graph_env_deprecated.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR/envs/vrp_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/vrp_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR/ppo_or.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/ppo_or.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709142957/events.out.tfevents.1709142957.VF-070237N.26348.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709142957/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709158109/events.out.tfevents.1709158109.VF-070237N.16304.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709158109/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709158266/events.out.tfevents.1709158266.VF-070237N.25872.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709158266/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709158482/events.out.tfevents.1709158482.VF-070237N.27352.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709158482/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709195544/events.out.tfevents.1709195544.VF-070237N.30664.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709195544/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709205861/events.out.tfevents.1709205861.VF-070237N.7812.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709205861/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709206128/events.out.tfevents.1709206128.VF-070237N.14788.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1709206128/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710173364/events.out.tfevents.1710173364.VF-070237N.4224.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710173364/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710175045/events.out.tfevents.1710175045.VF-070237N.12348.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710175045/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710175526/events.out.tfevents.1710175526.VF-070237N.22764.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710175526/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710177137/events.out.tfevents.1710177137.VF-070237N.23140.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710177137/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710177195/events.out.tfevents.1710177195.VF-070237N.10176.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710177195/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710179161/events.out.tfevents.1710179161.VF-070237N.21540.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v0__ppo_or__1__1710179161/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709469312/events.out.tfevents.1709469312.VF-070237N.27568.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709469312/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709469436/events.out.tfevents.1709469436.VF-070237N.22592.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709469436/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709469651/events.out.tfevents.1709469651.VF-070237N.32696.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709469651/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709469742/events.out.tfevents.1709469742.VF-070237N.23688.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709469742/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470086/events.out.tfevents.1709470086.VF-070237N.25308.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470086/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470272/events.out.tfevents.1709470272.VF-070237N.5248.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470272/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470577/events.out.tfevents.1709470577.VF-070237N.26696.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470577/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470741/events.out.tfevents.1709470741.VF-070237N.28040.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470741/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470913/events.out.tfevents.1709470913.VF-070237N.30792.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709470913/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709541926/events.out.tfevents.1709541926.VF-070237N.18716.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709541926/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709542302/events.out.tfevents.1709542302.VF-070237N.14952.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709542302/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709542686/events.out.tfevents.1709542686.VF-070237N.19464.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709542686/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709542929/events.out.tfevents.1709542929.VF-070237N.3324.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709542929/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709544219/events.out.tfevents.1709544219.VF-070237N.21800.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709544219/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709545700/events.out.tfevents.1709545700.VF-070237N.25784.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709545700/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709547013/events.out.tfevents.1709547013.VF-070237N.21888.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709547013/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709547168/events.out.tfevents.1709547168.VF-070237N.17456.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709547168/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709547448/events.out.tfevents.1709547448.VF-070237N.28712.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709547448/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709547900/events.out.tfevents.1709547900.VF-070237N.35260.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709547900/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709548574/events.out.tfevents.1709548574.VF-070237N.34552.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709548574/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709548942/events.out.tfevents.1709548942.VF-070237N.21836.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709548942/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709549383/events.out.tfevents.1709549383.VF-070237N.34120.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709549383/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709549793/events.out.tfevents.1709549793.VF-070237N.17228.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709549793/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709550142/events.out.tfevents.1709550142.VF-070237N.34916.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709550142/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709550290/events.out.tfevents.1709550290.VF-070237N.11828.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709550290/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709550555/events.out.tfevents.1709550555.VF-070237N.10260.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709550555/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709550636/events.out.tfevents.1709550636.VF-070237N.31512.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709550636/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709552211/events.out.tfevents.1709552211.VF-070237N.29608.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709552211/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709552382/events.out.tfevents.1709552382.VF-070237N.32876.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709552382/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709552490/events.out.tfevents.1709552490.VF-070237N.16460.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709552490/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709553140/events.out.tfevents.1709553140.VF-070237N.11420.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709553140/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709553265/events.out.tfevents.1709553265.VF-070237N.22016.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709553265/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709553582/events.out.tfevents.1709553582.VF-070237N.27708.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709553582/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709557141/events.out.tfevents.1709557141.VF-070237N.25056.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709557141/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709557918/events.out.tfevents.1709557918.VF-070237N.26944.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709557918/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709558025/events.out.tfevents.1709558025.VF-070237N.17832.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709558025/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709558596/events.out.tfevents.1709558596.VF-070237N.18584.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1709558596/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710170496/events.out.tfevents.1710170496.VF-070237N.19972.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710170496/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710191189/events.out.tfevents.1710191189.VF-070237N.13056.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710191189/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710260789/events.out.tfevents.1710260789.VF-070237N.2600.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710260789/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710261151/events.out.tfevents.1710261151.VF-070237N.25816.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710261151/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710261819/events.out.tfevents.1710261819.VF-070237N.6848.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710261819/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710270029/events.out.tfevents.1710270029.VF-070237N.21088.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710270029/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710271086/events.out.tfevents.1710271086.VF-070237N.21684.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710271086/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710271262/events.out.tfevents.1710271262.VF-070237N.21900.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710271262/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710272065/events.out.tfevents.1710272065.VF-070237N.25012.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710272065/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710272847/events.out.tfevents.1710272847.VF-070237N.22700.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710272847/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710273230/events.out.tfevents.1710273230.VF-070237N.27200.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710273230/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710273858/events.out.tfevents.1710273858.VF-070237N.23440.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710273858/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710274406/events.out.tfevents.1710274406.VF-070237N.12232.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710274406/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710274422/events.out.tfevents.1710274422.VF-070237N.22512.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710274422/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710275228/events.out.tfevents.1710275228.VF-070237N.3192.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710275228/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710275816/events.out.tfevents.1710275816.VF-070237N.26460.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710275816/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710275975/events.out.tfevents.1710275975.VF-070237N.22136.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710275975/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710276226/events.out.tfevents.1710276226.VF-070237N.26196.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710276226/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710277507/events.out.tfevents.1710277507.VF-070237N.23264.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710277507/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710277901/events.out.tfevents.1710277901.VF-070237N.20776.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710277901/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710321691/events.out.tfevents.1710321691.VF-070237N.15504.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710321691/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710323301/events.out.tfevents.1710323301.VF-070237N.3440.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710323301/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710327174/events.out.tfevents.1710327174.VF-070237N.16848.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710327174/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710328642/events.out.tfevents.1710328642.VF-070237N.16192.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710328642/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710328741/events.out.tfevents.1710328741.VF-070237N.16188.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710328741/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710329160/events.out.tfevents.1710329160.VF-070237N.8100.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710329160/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710329802/events.out.tfevents.1710329802.VF-070237N.3924.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710329802/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710331580/events.out.tfevents.1710331580.VF-070237N.17236.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710331580/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710332373/events.out.tfevents.1710332373.VF-070237N.11820.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710332373/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710332704/events.out.tfevents.1710332704.VF-070237N.17612.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710332704/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710332757/events.out.tfevents.1710332757.VF-070237N.18276.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710332757/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710332895/events.out.tfevents.1710332895.VF-070237N.16460.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710332895/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710333424/events.out.tfevents.1710333424.VF-070237N.17052.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710333424/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710333761/events.out.tfevents.1710333761.VF-070237N.18272.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710333761/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710333931/events.out.tfevents.1710333931.VF-070237N.18336.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710333931/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710333996/events.out.tfevents.1710333996.VF-070237N.14416.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710333996/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710334152/events.out.tfevents.1710334152.VF-070237N.5920.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710334152/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710334221/events.out.tfevents.1710334221.VF-070237N.11048.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710334221/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710335325/events.out.tfevents.1710335325.VF-070237N.3760.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710335325/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710335793/events.out.tfevents.1710335793.VF-070237N.13892.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710335793/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710338859/events.out.tfevents.1710338859.VF-070237N.18108.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710338859/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710340551/events.out.tfevents.1710340551.VF-070237N.7260.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710340551/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710342556/events.out.tfevents.1710342556.VF-070237N.17928.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710342556/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710409176/events.out.tfevents.1710409176.VF-070237N.14872.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710409176/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710428847/events.out.tfevents.1710428847.VF-070237N.12572.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710428847/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710429062/events.out.tfevents.1710429062.VF-070237N.19792.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710429062/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710432982/events.out.tfevents.1710432982.VF-070237N.19680.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710432982/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710433072/events.out.tfevents.1710433072.VF-070237N.16668.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710433072/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710433462/events.out.tfevents.1710433462.VF-070237N.8388.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710433462/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434559/events.out.tfevents.1710434559.VF-070237N.14472.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434559/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434688/events.out.tfevents.1710434688.VF-070237N.15076.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434688/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434756/events.out.tfevents.1710434756.VF-070237N.21492.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710434756/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435293/events.out.tfevents.1710435293.VF-070237N.15888.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435293/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435644/events.out.tfevents.1710435644.VF-070237N.19736.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435644/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435695/events.out.tfevents.1710435695.VF-070237N.18544.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710435695/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710436362/events.out.tfevents.1710436362.VF-070237N.17292.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710436362/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710436403/events.out.tfevents.1710436403.VF-070237N.17496.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1710436403/main.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rlor_vrp" beforeDir="false" afterPath="$PROJECT_DIR$/rlor_vrp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_rlor_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_inference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_inference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot_rlor.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_rlor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rlor_vrp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp13_25_steps_LocalMachine__1__1711276328/events.out.tfevents.1711276342.VF-070237N.1476.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp13_25_steps_LocalMachine__1__1711276328/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp13_50_steps_LocalMachine__1__1711276729/events.out.tfevents.1711276750.VF-070237N.19732.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp13_50_steps_LocalMachine__1__1711276729/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711111788/events.out.tfevents.1711111813.VF-070237N.20088.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711111788/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112094/events.out.tfevents.1711112114.VF-070237N.18068.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112094/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/code/RLOR/ppo_or.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112859/events.out.tfevents.1711112903.VF-070237N.18980.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112859/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711113306/events.out.tfevents.1711113328.VF-070237N.2104.0" beforeDir="false" afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/events.out.tfevents.1711571616.VF-070237N.1044.0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711113306/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711113550/events.out.tfevents.1711113570.VF-070237N.10684.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711113550/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711116745/events.out.tfevents.1711116763.VF-070237N.11892.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711116745/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp8_50_steps___1__1711127538/events.out.tfevents.1711127555.VF-070237N.18628.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp8_50_steps___1__1711127538/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_collab_notesLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/train_collab_notesLog.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,12 +186,13 @@
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\data" />
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\runs" />
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\runs\" />
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\envs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.plot_env">
+  <component name="RunManager" selected="Python.test_and_plot_trained_model">
     <configuration name="heuristic_solver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -383,7 +277,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ppo_or" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_and_plot_trained_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -391,11 +285,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RLOR" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/ppo_or.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_and_plot_trained_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_env" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rlor_vrp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RLOR/envs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/envs/test_env.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -406,10 +321,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.plot_env" />
-        <item itemvalue="Python.model_inference" />
-        <item itemvalue="Python.ppo_or" />
+        <item itemvalue="Python.test_and_plot_trained_model" />
         <item itemvalue="Python.heuristic_solver" />
+        <item itemvalue="Python.plot_env" />
+        <item itemvalue="Python.test_env" />
+        <item itemvalue="Python.model_inference" />
       </list>
     </recent_temporary>
   </component>
@@ -443,7 +359,21 @@
       <option name="project" value="LOCAL" />
       <updated>1710506842857</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="trained model in Colab. But faced a bug, the vehicle returns to depot after 1 customer. Need to adjust reward and mb context">
+      <created>1711447491963</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711447491963</updated>
+    </task>
+    <task id="LOCAL-00005" summary="reward shaping issue. Trained model was to rational and allways choose a depot. Here I added the penalty related to load, so the agent is penalized, when the load is -&gt;1 and he chooses the depot, for example.">
+      <created>1711570670197</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711570670197</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -477,7 +407,10 @@
     </ignored-roots>
     <MESSAGE value="Here I started to implement the vehicle fleet environment. Changed the context in RLOR, added the additional environment. The biggest issue is to implement def go_to() because it process the trajectories for ppo." />
     <MESSAGE value="commit for gitlab" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit for gitlab" />
+    <MESSAGE value="trained model in Colab. But faced a bug, the vehicle returns to depot after 1 customer. Need to adjust reward and mb context" />
+    <MESSAGE value="reward shaping issue. Trained model was to rational and allways choose a depot. Here I added the penalty related to load, so the agent is penalized, when the load is -&gt;1 and he chooses the depot, for example." />
+    <MESSAGE value="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -491,16 +424,6 @@
           <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
           <line>342</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>273</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>235</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
@@ -521,11 +444,6 @@
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
           <line>83</line>
           <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>223</line>
-          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
@@ -558,39 +476,60 @@
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
-          <line>86</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
-          <line>12</line>
+          <line>18</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
-          <line>54</line>
+          <line>59</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
-          <line>60</line>
+          <line>65</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
-          <line>63</line>
+          <line>68</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/test_env.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/test_env.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="self.load == 0" language="Python" />
           <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
-          <line>220</line>
-          <option name="timeStamp" value="106" />
+          <line>132</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_inference.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/model_inference.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="171" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

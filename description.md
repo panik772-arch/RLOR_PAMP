@@ -1,4 +1,4 @@
-## What has been done and what was the purpose here!
+## What has been done and what was the purpose he re!
 
 Date: 13.03.2024
 + here I implement the additional environment with finite vehicle fleet.
@@ -18,12 +18,12 @@ For comparison, when using the RLLib, I need only define my simple problem envir
 
 for RLLib documentation read also this https://openreview.net/pdf?id=trNDfee72NQ
 
-Lets take a look on the environment. There are many issues with that!
+Lets take a look at the environment. There are many issues with that!
 First, you need to understand the concept of batches (like many parallel environment) and trajectories (like simultaneous actions in one timestep in the same environment)
 First, we have to recall, that the PPO need trajectories, and they are somehow tricky to understand.
 For example
 
- `![img.png](img.png "trajectori views")
+![img.png](img.png "trajectori views")
 
 so, as you see, in ppo_or.py algorithm, we sample in each 
 
@@ -251,3 +251,80 @@ Realized validation i.e. Heuristic approach and plotting of the problem!
 [heuristic_solver.py](RLOR%2Fenvs%2Fheuristic_solver.py)
 [plot_env.py](RLOR%2Fenvs%2Fplot_env.py)
 [test_env.py](RLOR%2Fenvs%2Ftest_env.py)
+
+Date: 28.03.2024
+The last updates and experiments:
+
+- I have trained the model in google colab (the most expensive A100 runtime with gpu. It took around 5 hours. see exp17 in wandb https://wandb.ai/dl4log/rlor_finite_vehicle_fleet_env?nw=nwuserdeinelija ) the run i copypasted here:  C:\Users\dein_el\PycharmProjects\rlor_vrp\runs\cvrp-v1__exp17_colabT4_50_steps___1__1711303112- 
+- This model behaved not correctly. The trained Agent visited only one customer and returned to the depot.
+- The idea was to adjust the reward and to add the penalty as a function of a load of the vehicle. This was inspired by the realization of Prize Collection VRP in RL4OR e.g. However, I do not added prizes or additional embeddings here with the hope, that the reward adjustment will be sufficient
+- After several days of experiments I finally got the desired behaviour. The Agent makes tours. What did I do?
+  * first I tried the function like penalty_factor * (Sum(all possible demand)/Sum(collected demand so far)) -> It doesn't work
+  * Then I just added the load*penalty_factor to the trajectories when the vehicles returns to depot (see indicies_true in _go_to() function in cvrp_vehfleet_env) and it was ok, so far
+  * The Idea was, that if the load of the vehicle is not used (vehicle is still full (load = 1) and it returns to depot) then it will be penalized by factor
+  * penalty factor 10 was ok, so far. Check the test_env plots in RLOR/envs/test_env.py. You can clearly see, the length of the tour and the assigned reward as a function of distance and load. See also figures : C:\Users\dein_el\PycharmProjects\rlor_vrp\test_env_figures
+
+![example of a bad route](test_env_figures/bat route_check_rewards.png  "example of a bad route")
+
+
+![example of a good route](test_env_figures/good_root_check_rewards.png  "example of a good route")
+
+What did I change in code?
+(commit 5d0ad22 Revision Number->  5d0ad2250aa7fcd25cf1e35ba3a4601a0cba48d5) This commit was also pushed to gitlab 
+* basically, I only changed 'env class' . Because in the 'context' for instance I already consider Load, so I hope it will work somehow. If not, maybe I would have to add Price collection or loads to embeddings idk...
+
+#### This was added to the previous `cvrp_fleet_env` version so far:
+
+  * self.penalty = 10 
+  * I commented some redundant logics like `traj_with_all_visited_or_no_vehicles' in _Step because is_all_visited works too
+  * added this line  `# Not allow to visit nodes when the load is zero
+        action_mask[self.load <= 0, 1:] = False` in _update_mask() (not, that in update_mask we smhow set everything to False where "True" was in original self.visited tensor)
+ 
+  * e.g. self.distance = np.zeros(self.n_traj, dtype=float) in RESET is only needed, for test_env class 
+###### in the _go_to():
+  *  deleted the index selection: `return_to_depot_idx = self.last[true_indices] > 0` because it was somehow not useful, I think
+  * added `penalty_ = self.reward_func()` ONLY to true indx meaning, only when the vehicles return to depot not empty
+  * BUG: check, `self.load[self.load<0] = 0` because if it is <0 than it means vehicle has served demand, which has exceed its capacity, and it it not allowed! 
+  ....SO the BUG can occur in the future! 
+
+
+####  How to train model in **Google Colab**:
+*  Just run the script from your dein_el account and modify if neccessary  `modified_rlor_fleetvrp_env.ipynb` in "Google Drive-Ordner/Colab Notebooks/RLOR/"
+#### How to train model on local machine:
+* run the command 
+  * ` python RLOR/ppo_or.py --num-steps 50 --total-timesteps 20_000_000 --exp-name exp2.0_local_machine_after_refactoring_reward_shaping_ --env-id cvrp-v1 --env-entry-point envs.cvrp_vehfleet_env:CVRPFleetEnv --problem cvrp_fleet --track True --wandb-project-name rlor_finite_vehicle_fleet_env`
+
+#### How to train model on cluster machines e.g. athen or argos:
+* so far I started training on two cluster machines. Hów did I do that?
+  * first, follow the instruction here `C:\tmp\env_commands_ubuntu.txt`
+    * install conda env, install and create virtual_conda env
+    * install ipykernel and jupyter in conda env
+    * open colab and connect to the local runtime on these machines. 
+    * login with you google account on the local machines. Go to "systemwekzeuge/einstellungen/kontos" and add your deinelija@gmail.com konto! It creates and connect your drive automatically. Google Drive will appear in Dateien!
+    * now, you can store and retreat the files, like data and so on from there. So, copy the `data` folder from Drive-Ordner/Colab Notebooks/RLOR/ to the cluster machine
+    * you can now clone the git repo as shown in the notebook and start it. modify data and files if neccesary 
+    * that's all. enjoy. if the port like 8888 for jupyter was used, the wandb will track the learning rates and so on (only argos cluster). in other cases, when oter port was utilised, it will not track directly. 
+    * saved checkpoints are also on the local machine in the run_folder
+
+#### Test trained model
+* use either the ...\rlor_vrp\model_inference.py or colab inference
+* or inference for trained_rlor_cvrp_fleet model.ipynb in google colab. 
+  * This is useful, when you trained it in colab for example, on gpu and th model should also be inferenced on gpu. 
+
+#### How to push to gitlab.
+* Unfortunately I produced some mess in my git and don't know how to heal this anymore. I tried to delete and to create gits and remotes again and again, but it didn't help. So only this solution works
+  * commit and than force push to the remote ONLY the RLOR folder in IDE. Click on Git->right click on the main branch under the Local RLOR and then push, select force push. 
+  * it will commit only RLOR folder. the rest (fior examle this file, or checkpoints or data) you have to upload there manually.
+
+#### TODO for 01.04-07.04:
+* first of all check the trained cluster model. Take the checkpoints from the clustermachines and transfer it through google_drive and test on your local machine!
+* check,analyze. If it works, start to compose and document for the paper. 
+* compare this model with he RLLib! plan and execute perfomance test, track and analyze the efficency, solutions and perfomance. Make simple tests...
+* start to integrate this model into the global Vehicle Fleet model from RLLIB-> see project RL4Log-> HCVRP
+
+Date: 02.04.2024 after Easter
++ I trained the model on clusters and it seems, it works properly. Look at runs/argos_exp3.2 for the checkpoints
++ I wrote a test class, which can plot both a OR solution and the RL solution, calculates true ditances and also print the collected demand -> `test_and_plot_trained_model.py`
++ also I added the `generate_datasets.py` file to produce the train and valid data. This was done for the new training run on athene machine with more train and valid data. (I geeraed 1000 instances of the train and valid with 20,50,75 and 100 as a graph size)
++ So far, the RL solutions look better than the OR. Not in terms of plots, here it is ot so good. But the distances or demands collected seem to be in a good range. 
+![Results.png](runs%2Fargos_exp3.2%2FResults.png)

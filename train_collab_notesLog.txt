@@ -1,7 +1,7 @@
 1 step -> 11.2 GPU RAM
 however, after the second sep, it still consumed 11.2 ram..so i seems to be stable here
 
-all experiments were crushed because of GPU RAM capacity.
+all experiments were crashed because of GPU RAM capacity.
 Started to train on A100 with 40gb gpu ram and 83gb system ram but for 13 RechenEinheit/h ->exp11
 
 idea: mb I slowdown training by printing out everythin...
