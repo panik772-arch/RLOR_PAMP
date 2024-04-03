@@ -174,7 +174,7 @@ if __name__ == "__main__":
 
         return thunk
 
-    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=100, max_nodes = 100, max_num_vehicles = 10))])
+    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=50, max_nodes = 50, max_num_vehicles = 5))])
     obs = envs.reset()
 
     '''

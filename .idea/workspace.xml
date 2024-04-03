@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well">
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/wrappers/syncVectorEnvPomo.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/wrappers/syncVectorEnvPomo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711111788/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112094/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/code/RLOR/ppo_or.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR/ppo_or.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/ppo_or.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_and_plot_trained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -264,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1712081680260</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc">
+      <created>1712136401350</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712136401350</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc">
+      <created>1712136473709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712136473709</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,7 +311,8 @@
     <MESSAGE value="trained model in Colab. But faced a bug, the vehicle returns to depot after 1 customer. Need to adjust reward and mb context" />
     <MESSAGE value="reward shaping issue. Trained model was to rational and allways choose a depot. Here I added the penalty related to load, so the agent is penalized, when the load is -&gt;1 and he chooses the depot, for example." />
     <MESSAGE value="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well" />
-    <option name="LAST_COMMIT_MESSAGE" value="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well" />
+    <MESSAGE value="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -313,7 +324,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>342</line>
+          <line>343</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
