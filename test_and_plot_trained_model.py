@@ -148,7 +148,7 @@ if __name__ == "__main__":
 
     env_ = CVRPFleetEnv()
 
-    ckpt_path = "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3500.pt"
+    ckpt_path = "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/4200.pt"
 
     agent = Agent(device=device, name='cvrp_fleet').to(device)
     agent.load_state_dict(torch.load(ckpt_path))
@@ -174,7 +174,7 @@ if __name__ == "__main__":
 
         return thunk
 
-    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=50))])
+    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=100, max_nodes = 100, max_num_vehicles = 10))])
     obs = envs.reset()
 
     '''

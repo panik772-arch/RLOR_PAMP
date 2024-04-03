@@ -328,3 +328,13 @@ Date: 02.04.2024 after Easter
 + also I added the `generate_datasets.py` file to produce the train and valid data. This was done for the new training run on athene machine with more train and valid data. (I geeraed 1000 instances of the train and valid with 20,50,75 and 100 as a graph size)
 + So far, the RL solutions look better than the OR. Not in terms of plots, here it is ot so good. But the distances or demands collected seem to be in a good range. 
 ![Results.png](runs%2Fargos_exp3.2%2FResults.png)
+
+Date: 03.04.2024
+
++ I managed to add variable parameters to the environment: ` envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=100, max_nodes = 100, max_num_vehicles = 10))])`
+  + here I added `self.max_nodes = self.envs[0].max_nodes
+        self.max_num_vehicles = self.envs[0].max_num_vehicles`  to the class ` class SyncVectorEnv(VectorEnv):
+    """Vectorized environment that serially runs multiple environments. `  and it overwrites the arguments in the env somehow automatically.
+
+  + ##TODO: Try to adjust the penalty in the environmnt to controll the agent behaviour. Learn policy with penalty  = 1 and penalty= 30
+  + 

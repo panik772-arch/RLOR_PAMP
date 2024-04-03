@@ -5,130 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well">
-      <change afterPath="$PROJECT_DIR$/RLOR/envs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/HOT_TO_GENERATE_DATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp100_test_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp100_validation_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp100_validation_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp20_test_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp20_validation_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp20_validation_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp50_test_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp50_validation_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp50_validation_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp75_test_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp75_validation_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp/vrp75_validation_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate_datasets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/Results.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1200.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1300.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1400.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1500.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1600.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1700.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1800.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/1900.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/200.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2200.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2300.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2400.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2500.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2600.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2700.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2800.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/2900.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/300.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3200.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3300.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3400.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/3500.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/400.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/500.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/600.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/700.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/800.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/900.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/events.out.tfevents.1711632529.vf-argos.intra.dlr.de.9220.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/1000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/1100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/1171.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/200.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/300.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/400.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/500.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/600.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/700.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/800.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/ckpt/900.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/events.out.tfevents.1711627066.vf-athene.intra.dlr.de.15641.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/10.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/110.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/120.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/130.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/140.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/150.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/160.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/170.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/20.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/30.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/40.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/50.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/60.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/70.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/80.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/ckpt/90.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/conda-environment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/diff.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/output.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/wandb-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/wandb-summary.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/logs/debug-internal.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/logs/debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/run-tsegupg3.wandb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rlor_vrp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rlor_vrp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/envs/graph_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/graph_env_deprecated.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/envs/vrp_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/vrp_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/ppo_or.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/ppo_or.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR/wrappers/syncVectorEnvPomo.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/wrappers/syncVectorEnvPomo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_inference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_rlor.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_rlor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rlor_vrp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp13_25_steps_LocalMachine__1__1711276328/events.out.tfevents.1711276342.VF-070237N.1476.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp13_25_steps_LocalMachine__1__1711276328/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp13_50_steps_LocalMachine__1__1711276729/events.out.tfevents.1711276750.VF-070237N.19732.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp13_50_steps_LocalMachine__1__1711276729/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/runs/athene_exp3.1/cvrp-v1__exp3.1_vf-athena_cluster_local_runtime__1__1711627055/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711111788/events.out.tfevents.1711111813.VF-070237N.20088.0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711111788/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112094/events.out.tfevents.1711112114.VF-070237N.18068.0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112094/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wandb/run-20240327_213333-tsegupg3/files/code/RLOR/ppo_or.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112859/events.out.tfevents.1711112903.VF-070237N.18980.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711112859/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711113306/events.out.tfevents.1711113328.VF-070237N.2104.0" beforeDir="false" afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp2.1_local_machine_after_refactoring_reward_shaping___1__1711571607/events.out.tfevents.1711571616.VF-070237N.1044.0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711113306/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711113550/events.out.tfevents.1711113570.VF-070237N.10684.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711113550/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711116745/events.out.tfevents.1711116763.VF-070237N.11892.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp5_50_steps___1__1711116745/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp8_50_steps___1__1711127538/events.out.tfevents.1711127555.VF-070237N.18628.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runs/cvrp-v1__exp8_50_steps___1__1711127538/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_collab_notesLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/train_collab_notesLog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_and_plot_trained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711570670197</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well">
+      <created>1712081680260</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712081680260</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

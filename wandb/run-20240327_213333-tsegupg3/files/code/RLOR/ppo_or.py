@@ -362,7 +362,7 @@ if __name__ == "__main__":
         writer.add_scalar("losses/explained_variance", explained_var, global_step)
         print("SPS:", int(global_step / (time.time() - start_time)))
         writer.add_scalar("charts/SPS", int(global_step / (time.time() - start_time)), global_step)
-        if update % 1000 == 0 or update == num_updates:
+        if update % 10 == 0 or update == num_updates:
             torch.save(agent.state_dict(), f"runs/{run_name}/ckpt/{update}.pt")
         if update % 100 == 0 or update == num_updates:
             agent.eval()
@@ -392,6 +392,6 @@ if __name__ == "__main__":
             writer.add_scalar("test/episodic_return_mean", avg_episodic_return, global_step)
             writer.add_scalar("test/episodic_return_max", max_episodic_return, global_step)
             writer.add_scalar("test/episodic_length", avg_episodic_length, global_step)
-
+    print("model trained")
     envs.close()
     writer.close()
