@@ -148,14 +148,15 @@ if __name__ == "__main__":
 
     env_ = CVRPFleetEnv()
 
-    ckpt_path = "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/4200.pt"
+    ckpt_path = "runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
+    #"runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/5000.pt"#"runs/athene_exp3.3/cvrp-v1__exp3.3_vf-athena_cluster_local_runtime_2__1__1712077050/ckpt/1000.pt" #
 
     agent = Agent(device=device, name='cvrp_fleet').to(device)
     agent.load_state_dict(torch.load(ckpt_path))
 
     env_id = 'cvrp-v1'
     env_entry_point = 'RLOR.envs.cvrp_vehfleet_env:CVRPFleetEnv'
-    seed = 1234
+
 
     gym.envs.register(
         id=env_id,
@@ -173,8 +174,9 @@ if __name__ == "__main__":
             return env
 
         return thunk
-
-    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=50, max_nodes = 50, max_num_vehicles = 5))])
+    vehicles = 5
+    seed = 4321
+    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=10, max_nodes = 50, max_num_vehicles = vehicles))])
     obs = envs.reset()
 
     '''
@@ -187,10 +189,9 @@ if __name__ == "__main__":
     nodes = obs["observations"][0]
     dep = obs["depot"][0]
     demand = obs["demand"][0]
-    nr_veh = env_.max_num_vehicles
     print(demand * scale)
 
-    m.add_vehicle_type(nr_veh, capacity=1 * scale)
+    m.add_vehicle_type(vehicles, capacity=1 * scale)
 
     print(f'{dep[0]} and {dep[1]}')
 

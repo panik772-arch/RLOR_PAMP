@@ -1,3 +1,4 @@
+##### Note! The main working directory here is RLOR! 
 ## What has been done and what was the purpose he re!
 
 Date: 13.03.2024
@@ -337,4 +338,32 @@ Date: 03.04.2024
     """Vectorized environment that serially runs multiple environments. `  and it overwrites the arguments in the env somehow automatically.
 
   + ##TODO: Try to adjust the penalty in the environmnt to controll the agent behaviour. Learn policy with penalty  = 1 and penalty= 30
-  + 
+
+DATE: 04.04.2024
+* Idea. Maybe I need to integrate num_customers into the reward_function and not only penalize the agent on Load-basis. Instead, the number of served customers counts! Because in VRP each customer is equivalent, and this how bg is his order. Or Just add +(num_cust/total_demand)/penalty
+* integrate different reward functions. (Num_of_collected_customers + )*penalty + 
+###### TODO:     ## look https://arxiv.org/pdf/2401.06979.pdf the authors propose to scale this score with log(d_i,j) in order to mitigate the attention score dispersion!
+        ## The DAR method amplifies the distance scores of the nearest
+        ## neighbors to the current node using a logarithmic function,
+        ## which guides the NS to prioritize nodes that are closer, even
+        ## when the attention scores are similar.
+        ## (2) Identification of random high-score nodes. DAR assists NS in excluding distant and irrelevant high-score nodes
+        ## by penalizing faraway nodes.
+
+Date: 05.04.2024
+
+* added the functions for node amplifying from Wang2024. currently in attention_model_wrapper.py in `state`
+* added this implementation in the Attention Score. TEST it
+* to integrate state in the attention, added the state variable to function_input ->  `def forward(self, query, key, state ,mask=torch.zeros([], dtype=torch.bool)): `
++ added state variable also to the upper function pointer() ` logits = self.pointer(glimpse, state, logit_K, mask) # in cvrp_env -> with mask in decoder e receive attentScrore of the shape (1025,50,51) as same as mask shape! with values like [-9,89, -inf, -inf...]. So depot is not -inf and all other -inf,,why?
+`and `logits, glimpse = self.calc_logits(query,state, glimpse_K, glimpse_V, logit_K, mask)` to the Decoder-> advance()
++ started to implement for testing `models/test_models_with_attention_distance_enhancement.py`
++ ###### TODO: Test it. Maybe implement the 10 nodes problem and track the distribution of the attention scores to nodes
++ ###### MAYBE NOT MINUS LOG DIST BUT PLUS IN MY CASE
+
+Date: 06.04.2024
+###### Check, Im not sure, that a current node is a last_nd index wat I have. Check this...
+because I provde in attention stateWrapper in decoder basically previous node..Is this a current load? Im not so sure..I have to use embedding and identify the index better...
+
+
+##### Think about the A* algorithm. By implementing state and distance directly into the decoder we have the opportunity to directly scale decoder weights, like we do this in AStar heuristics. Multply the istance by someA factor. Cool, we so implement the RLOR- heuristics and manipulate the decoder weights.
