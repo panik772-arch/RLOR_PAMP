@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)">
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/parameters_description" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.1_seed0_nodes=1000_n_traj=10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.1_seed4321_nodes=1000_n_traj=10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.1_seed4321_nodes=50_n_traj=10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.2_seed0_nodes=1000_n_traj=10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.2_seed1234_nodes=1000_n_traj=10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.2_seed1234_nodes=100_n_traj=10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp4.1DAR_seed0_nodes=1000_n_traj=10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp4.1DAR_seed1234_nodes=1000_n_traj=10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp4.1DAR_seed1234_nodes=100_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/envs/test_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/test_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_and_plot_trained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712574383708</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)">
+      <created>1712574481517</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712574481517</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

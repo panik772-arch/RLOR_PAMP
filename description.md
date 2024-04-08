@@ -353,6 +353,7 @@ DATE: 04.04.2024
 Date: 05.04.2024
 
 * added the functions for node amplifying from Wang2024. currently in attention_model_wrapper.py in `state`
+* -> new branch RLOR -> distance_matrix_for_decoder
 * added this implementation in the Attention Score. TEST it
 * to integrate state in the attention, added the state variable to function_input ->  `def forward(self, query, key, state ,mask=torch.zeros([], dtype=torch.bool)): `
 + added state variable also to the upper function pointer() ` logits = self.pointer(glimpse, state, logit_K, mask) # in cvrp_env -> with mask in decoder e receive attentScrore of the shape (1025,50,51) as same as mask shape! with values like [-9,89, -inf, -inf...]. So depot is not -inf and all other -inf,,why?
@@ -365,6 +366,7 @@ Date: 06.04.2024
 ###### Check, Im not sure, that a current node is a last_nd index wat I have. Check this...
 because I provde in attention stateWrapper in decoder basically previous node..Is this a current load? Im not so sure..I have to use embedding and identify the index better...
 
+-> now it is also possible to set args paraeter k in training. Try to train with k = 5, k=20, and k = 50 for example
 
 ##### Think about the A* algorithm. By implementing state and distance directly into the decoder we have the opportunity to directly scale decoder weights, like we do this in AStar heuristics. Multply the istance by someA factor. Cool, we so implement the RLOR- heuristics and manipulate the decoder weights.
 
