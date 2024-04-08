@@ -4,64 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc&#10;added GENERATE DATA file as well, for extensie training on argos cluster">
-      <change afterPath="$PROJECT_DIR$/RLOR/models/second step_distance matrix DAR Method_ transformed like in Wang Paper .png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RLOR/models/step1_distance matrix DAR Method_ transformed like in Wang Paper .png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RLOR/models/test_dist_matrxs_for_attention_enhancing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RLOR/models/test_models_with_attention_distance_enhancement.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1712228169/events.out.tfevents.1712228169.VF-070237N.9376.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RLOR/runs/cvrp-v1__ppo_or__1__1712228169/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=1000_ veh=10_seed=1234_ntraj=1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=1000_ veh=10_seed=1234_ntraj=100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=1000_ veh=20_seed=4321_ntraj=100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=100_ veh=10_seed=1234_ntraj=1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=100_ veh=10_seed=1234_ntraj=100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=100_ veh=5_seed4321_ntraj=1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=100_ veh=5_seed4321_ntraj=100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=100_ veh=5_seed=1234_ntraj=100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cust=100_ veh=5_seed=1234_ntraj=50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/5000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/scale up to 1000 customers and 10 vehicles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/scale up to 100customers and 10vehicles _seed4321.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/scale up to 100customers and 5vehicles _seed0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/scale_up to 500 customers 10 vehicles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/scale_up to 500 customers 10 vehicles_seed1234.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/scale_up to 500 customers 10 vehicles_seed4321.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/10.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/110.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/120.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/130.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/140.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/150.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/160.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/170.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/180.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/190.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/20.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/210.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/220.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/30.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/40.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/50.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/60.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/70.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/80.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/90.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/events.out.tfevents.1712328992.VF-070237N.22928.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/events.out.tfevents.1712436040.VF-070237N.10788.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/main.py" afterDir="false" />
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with">
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/parameters_description" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.1_seed0_nodes=1000_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.1_seed4321_nodes=1000_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.1_seed4321_nodes=50_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.2_seed0_nodes=1000_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.2_seed1234_nodes=1000_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.2_seed1234_nodes=100_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp4.1DAR_seed0_nodes=1000_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp4.1DAR_seed1234_nodes=1000_n_traj=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp4.1DAR_seed1234_nodes=100_n_traj=10.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RLOR/envs/test_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/envs/test_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/models/nets/attention_model/decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/models/nets/attention_model/decoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLOR/ppo_or.py" beforeDir="false" afterPath="$PROJECT_DIR$/RLOR/ppo_or.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_inference.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_and_plot_trained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +91,7 @@
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\envs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_and_plot_trained_model">
+  <component name="RunManager" selected="Python.test_env">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="rlor_vrp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,7 +113,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ppo_or" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="plot_env" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -163,11 +121,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RLOR" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RLOR/envs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/ppo_or.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/envs/plot_env.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -262,11 +220,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_env" />
+        <item itemvalue="Python.plot_env" />
         <item itemvalue="Python.test_and_plot_trained_model" />
         <item itemvalue="Python.test_models_with_attention_distance_enhancement" />
         <item itemvalue="Python.test_dist_matrxs_for_attention_enhancing" />
-        <item itemvalue="Python.ppo_or" />
-        <item itemvalue="Python.test_env" />
       </list>
     </recent_temporary>
   </component>
@@ -342,7 +300,28 @@
       <option name="project" value="LOCAL" />
       <updated>1712170858209</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with">
+      <created>1712567298416</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712567298416</updated>
+    </task>
+    <task id="LOCAL-00011" summary="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with">
+      <created>1712567325978</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712567325978</updated>
+    </task>
+    <task id="LOCAL-00012" summary="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with">
+      <created>1712567373443</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712567373443</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -381,7 +360,8 @@
     <MESSAGE value="see description. the trained runs on cluster machines work. I added evaluation and ploting files and generate_datasets.py as well" />
     <MESSAGE value="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc" />
     <MESSAGE value="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc&#10;added GENERATE DATA file as well, for extensie training on argos cluster" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc&#10;added GENERATE DATA file as well, for extensie training on argos cluster" />
+    <MESSAGE value="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -392,24 +372,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>345</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/context.py</url>
           <line>89</line>
           <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
-          <line>89</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
-          <line>92</line>
-          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
@@ -454,7 +419,7 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <condition expression="self.load == 0" language="Python" />
           <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
-          <line>132</line>
+          <line>133</line>
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -483,14 +448,14 @@
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="226" />
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
+          <line>104</line>
+          <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="229" />
+          <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
+          <line>238</line>
+          <option name="timeStamp" value="232" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

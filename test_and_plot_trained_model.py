@@ -148,7 +148,7 @@ if __name__ == "__main__":
 
     env_ = CVRPFleetEnv()
 
-    ckpt_path = "runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
+    ckpt_path = "runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
     #"runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/5000.pt"#"runs/athene_exp3.3/cvrp-v1__exp3.3_vf-athena_cluster_local_runtime_2__1__1712077050/ckpt/1000.pt" #
 
     agent = Agent(device=device, name='cvrp_fleet').to(device)
@@ -175,8 +175,8 @@ if __name__ == "__main__":
 
         return thunk
     vehicles = 5
-    seed = 4321
-    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=10, max_nodes = 50, max_num_vehicles = vehicles))])
+    seed = 0
+    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=10, max_nodes = 1000, max_num_vehicles = vehicles))])
     obs = envs.reset()
 
     '''

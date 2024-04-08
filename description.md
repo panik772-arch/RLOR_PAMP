@@ -367,3 +367,7 @@ because I provde in attention stateWrapper in decoder basically previous node..I
 
 
 ##### Think about the A* algorithm. By implementing state and distance directly into the decoder we have the opportunity to directly scale decoder weights, like we do this in AStar heuristics. Multply the istance by someA factor. Cool, we so implement the RLOR- heuristics and manipulate the decoder weights.
+
+Date: 08.04.2024
+* added penalty for the num of unassigned customers. When only depot is visited (1) then it adds 3.9 to the penalty. when 10 customers visited -> log() is 1.5. 1 is by ca. 20 customers. 
+and when more it decrease logarithm self.penalty * self.load + np.log(self.max_nodes/visited_traj)
