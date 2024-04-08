@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with">
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)">
       <change afterPath="$PROJECT_DIR$/runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/parameters_description" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.1_seed0_nodes=1000_n_traj=10.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/runs/figures_comparisson_DAR_method and normal attention/exp3.1_seed4321_nodes=1000_n_traj=10.png" afterDir="false" />
@@ -321,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712567373443</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)">
+      <created>1712574383708</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712574383708</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -361,7 +368,8 @@
     <MESSAGE value="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc" />
     <MESSAGE value="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc&#10;added GENERATE DATA file as well, for extensie training on argos cluster" />
     <MESSAGE value="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with" />
-    <option name="LAST_COMMIT_MESSAGE" value="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with" />
+    <MESSAGE value="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
