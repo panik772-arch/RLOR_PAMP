@@ -372,4 +372,12 @@ because I provde in attention stateWrapper in decoder basically previous node..I
 
 Date: 08.04.2024
 * added penalty for the num of unassigned customers. When only depot is visited (1) then it adds 3.9 to the penalty. when 10 customers visited -> log() is 1.5. 1 is by ca. 20 customers. 
-and when more it decrease logarithm self.penalty * self.load + np.log(self.max_nodes/visited_traj)
+and when more it decreases logarithm self.penalty * self.load + np.log(self.max_nodes/visited_traj)
+* train with: python RLOR/ppo_or.py --num-steps 50 --k-neighbors = 3 --total-timesteps 20_000_000 --exp-name exp4.1_with_AttentionScore_Enhancing --env-id cvrp-v1 --env-entry-point envs.cvrp_vehfleet_env:CVRPFleetEnv --problem cvrp_fleet --track False --wandb-project-name rlor_finite_vehicle_fleet_env
+* started experiments exp 5.2 and 5.3 on 08.04 at 17:50 with DAR method on argos with "k = 10, penalty = 10" and athene with k = 20 and penalty = 5. 
+
+Date: 09.04.2024
+
+It makes basically no sense to add DAR method to POMO, because POMO utilize the idea of multiple optimas at the same time and explore the entire solution space at th same time. 
+Whereby DAR method is better for step-by-step solution construction. It would be better for RL, so it can select only neighbor nodes...
+TODO: Try to implemen DAR Method with RLLib and compare to POMO CleanRL... 

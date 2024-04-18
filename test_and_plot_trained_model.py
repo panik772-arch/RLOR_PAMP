@@ -148,10 +148,10 @@ if __name__ == "__main__":
 
     env_ = CVRPFleetEnv()
 
-    ckpt_path = "runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
+    ckpt_path = "runs/Argos_exp5.2_DAR_k10/9100.pt"#"runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
     #"runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/5000.pt"#"runs/athene_exp3.3/cvrp-v1__exp3.3_vf-athena_cluster_local_runtime_2__1__1712077050/ckpt/1000.pt" #
 
-    agent = Agent(device=device, name='cvrp_fleet').to(device)
+    agent = Agent(device=device, name='cvrp_fleet', k = 3).to(device)
     agent.load_state_dict(torch.load(ckpt_path))
 
     env_id = 'cvrp-v1'
@@ -174,9 +174,9 @@ if __name__ == "__main__":
             return env
 
         return thunk
-    vehicles = 5
-    seed = 0
-    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=10, max_nodes = 1000, max_num_vehicles = vehicles))])
+    vehicles = 10
+    seed = 4321
+    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=1, max_nodes = 1000, max_num_vehicles = vehicles, penalty = 10))])
     obs = envs.reset()
 
     '''
@@ -226,15 +226,22 @@ if __name__ == "__main__":
     trajectories = []
     agent.eval()
     done = np.array([False])
+    logits = []
+    entropies = []
+    values = []
     while not done.all():
         # ALGO LOGIC: action logic
         with torch.no_grad():
-            action, logits = agent(obs)
+            action,logit  = agent(obs)
         if trajectories == []:  # Multi-greedy inference
             action = torch.arange(1, envs.n_traj + 1).repeat(1, 1)
 
         obs, reward, done, info = envs.step(action.cpu().numpy())
         trajectories.append(action.cpu().numpy())
+        logits.append(logits)
+        #entropies.append(entropy)
+        #values.append(value)
+
 
     nodes_coordinates = np.vstack([obs['depot'], obs['observations'][0]])
     final_return = info[0]['episode']['r']
