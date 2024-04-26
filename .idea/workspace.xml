@@ -4,48 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="Preparation for the next Stream: DAR method with replaced Node Amplifying">
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_evaluate_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_test_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_validation_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_evaluate_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_test_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_validation_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_evaluate_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_test_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_validation_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_evaluate_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_test_seed1234.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_validation_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/1000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/4000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/6000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/6100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/6300.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/cus_100_veh_5_seed1234_k3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/cus_500_veh_5_seed4321_k3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/cus_50_veh_5_seed1234_k3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/cus_50_veh_5_seed1234_k50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/readme(1).docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/4000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/6000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/6400.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_100_vehicles_5_seed1234_k50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_100_vehicles_5_seed4321.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_500_vehicles_5_seed_4321_k3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_500_vehicles_5_seed_4321_k50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_50_vehicles_5_seed_1234.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/custom_1000_veh_10_seed_4321.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/custom_25_veh_3_seed_1234.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/readme.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validate_vrp_with_tw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_datasets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_and_plot_trained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
-    </list>
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="Preparation for the next Stream: DAR method with replaced Node Amplifying" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
