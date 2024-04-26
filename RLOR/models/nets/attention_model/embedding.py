@@ -17,6 +17,7 @@ def AutoEmbedding(problem_name, config):
         "pctsp": PCTSPEmbedding,
         "op": OPEmbedding,
         "cvrp_fleet": CVRPFleetEmbeddings,
+        "cvrp_fleet_tw": CVRPFleetTwEmbeddings,
     }
     embeddingClass = mapping[problem_name]
     embedding = embeddingClass(**config)
@@ -196,7 +197,7 @@ class CVRPFleetEmbeddings(nn.Module):
     +===========+=========================+
     | 'loc'     | [batch, n_customer, 2]  |
     +-----------+-------------------------+
-    | 'depot'   | [batch, 3]              | # x,y and numb of vehicles
+    | 'depot'   | [batch, 2]              | # x,y and numb of vehicles
     +-----------+-------------------------+
     | 'demand'  | [batch, n_customer, 1]  |
     +-----------+-------------------------+
@@ -214,8 +215,6 @@ class CVRPFleetEmbeddings(nn.Module):
     def __init__(self, embedding_dim):
         super(CVRPFleetEmbeddings, self).__init__()
         node_dim = 3  # x, y, demand
-        scalar = 1
-
         self.context_dim = embedding_dim + 2  # Embedding of last node + remaining_capacity
         self.init_embed = nn.Linear(node_dim, embedding_dim)
         self.init_embed_depot = nn.Linear(2, embedding_dim)  # depot embedding PLUS num of vehicles as the 3 feature
@@ -226,6 +225,7 @@ class CVRPFleetEmbeddings(nn.Module):
         # batch, 1, 2 -> batch, 1, embedding_dim
         depot_embedding = self.init_embed_depot(input["depot"])[:, None, :]
         # [batch, n_customer, 2, batch, n_customer, 1]  -> batch, n_customer, embedding_dim
+
         node_embeddings = self.init_embed(
             torch.cat((input["loc"], input["demand"][:, :, None]), -1)
         )
@@ -233,18 +233,53 @@ class CVRPFleetEmbeddings(nn.Module):
         out = torch.cat((depot_embedding, node_embeddings), 1)
         return out
 
-        ''' 
-        #concat the depot and vehicles:
-        depot_and_veh = torch.cat((input["depot"], input["num_veh"][:, None]), -1)
 
-        depot_embedding = self.init_embed_depot(depot_and_veh)[:, None, :]
+class CVRPFleetTwEmbeddings(nn.Module):
+    """
+    Embedding for the capacitated vehicle routing problem.
+    The shape of tensors in ``input`` is summarized as following:
+
+    +-----------+-------------------------+
+    | key       | size of tensor          |
+    +===========+=========================+
+    | 'loc'     | [batch, n_customer, 2]  |
+    +-----------+-------------------------+
+    | 'depot'   | [batch, 3]              | # x,y and numb of vehicles
+    +-----------+-------------------------+
+    | 'demand'  | [batch, n_customer, 1]  |
+    +-----------+-------------------------+
+
+    +-----------+-------------------------+
+
+    Args:
+        embedding_dim: dimension of output
+    Inputs: input
+        * **input** : dict of ['loc', 'depot', 'demand']
+    Outputs: out
+        * **out** : [batch, n_customer+1, embedding_dim]
+    """
+
+    def __init__(self, embedding_dim):
+        super(CVRPFleetTwEmbeddings, self).__init__()
+        node_dim = 4  # x, y, demand
+        scalar = 1
+
+        self.context_dim = embedding_dim + 2  # Embedding of last node + remaining_capacity
+        self.init_embed = nn.Linear(node_dim, embedding_dim)
+        self.init_embed_depot = nn.Linear(2,
+                                          embedding_dim)  # depot embedding PLUS num of vehicles as the 3 feature
+
+    def forward(self, input):  # dict of 'loc', 'demand', 'depot', num_vehicles
+        # batch, 1, 2 -> batch, 1, embedding_dim
+
+        # batch, 1, 2 -> batch, 1, embedding_dim
+        depot_embedding = self.init_embed_depot(input["depot"])[:, None, :]
         # [batch, n_customer, 2, batch, n_customer, 1]  -> batch, n_customer, embedding_dim
+
         node_embeddings = self.init_embed(
-            torch.cat((input["loc"], input["demand"][:, :, None]), -1)
+            torch.cat((input["loc"], input["demand"][:, :, None], input["tw"][:, :,None]), -1)
         )
-
-        # batch, n_customer+1 AND fleet Embed!  , embedding_dim
-        out = torch.cat((depot_embedding, node_embeddings), 1) #-> (1024, 51, 128)
-
+        # batch, n_customer+1, embedding_dim
+        out = torch.cat((depot_embedding, node_embeddings), 1)
         return out
-        '''
+

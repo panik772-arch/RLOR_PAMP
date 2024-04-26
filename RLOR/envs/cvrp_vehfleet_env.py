@@ -102,8 +102,7 @@ class CVRPFleetEnv(gym.Env):
 
         #the idea is to use vehicle load as penalty. when 1 (nothing was delivered, it is bad. and when 0, its good, so it is linear dependency
         visited_traj= self.visited.sum(axis=1)
-        return self.penalty * self.load + np.log(self.max_nodes/visited_traj)
-
+        return self.penalty * self.load #+ np.log(self.max_nodes/visited_traj)
 
     def _update_state(self):
         obs = {"observations": self.nodes[1:]}  # n x 2 array

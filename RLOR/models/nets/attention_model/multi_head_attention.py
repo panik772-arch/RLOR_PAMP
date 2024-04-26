@@ -47,7 +47,7 @@ class AttentionScore(nn.Module):
         * **logits**: [..., 1, graph_size] The attention score for each key.
     """
 
-    def __init__(self, use_tanh=False, C=10):
+    def __init__(self, use_tanh=True, C=10):
         super(AttentionScore, self).__init__()
         self.use_tanh = use_tanh
         self.C = C
@@ -55,11 +55,19 @@ class AttentionScore(nn.Module):
     def forward(self, query, key, mask=torch.zeros([], dtype=torch.bool), state = None ):
         u = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(query.size(-1))
 
-        if state is not None:
-            _,transformed_distances = state.return_topK_closest()
+        if state is not None and state.problem == "cvrp_fleet_tw":
+            self.use_tanh = True
+            ratio, _,_,_ = state.tw_ratio()
+            #Apply the transformation across the entire dist_matrix first
+            # tw_ratio between [0,1]. if it >1 -> -inf, so not reachable.. if it 0, no time pressure. if it goes -> 1, time pressure increase..
+            # so we want to attend to nodes with high time pressure
+            time_ratio = torch.where(ratio > 1, float("-inf"), ratio)
+            u += time_ratio
+
+            #transformed_distances, _ = state.return_topK_closest()
             # Adjust u based on transformed_distances directly
             # This assumes transformed_distances have been processed as per DAR method logic in stateWrapper
-            u += transformed_distances
+            #u += transformed_distances
 
         if self.use_tanh:
             logits = torch.tanh(u) * self.C

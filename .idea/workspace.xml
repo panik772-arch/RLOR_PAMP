@@ -4,23 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)">
-      <change afterPath="$PROJECT_DIR$/runs/Argos_exp5.2_DAR_k10/100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Argos_exp5.2_DAR_k10/4000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Argos_exp5.2_DAR_k10/8000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Argos_exp5.2_DAR_k10/9100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Argos_exp5.2_DAR_k10/events.out.tfevents.1712589162.vf-argos.intra.dlr.de.34211.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Argos_exp5.2_DAR_k10/parametes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.1_DAR_k25_penalty5/100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.1_DAR_k25_penalty5/4000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.1_DAR_k25_penalty5/8000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.1_DAR_k25_penalty5/8700.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.1_DAR_k25_penalty5/events.out.tfevents.1712591583.vf-athene.intra.dlr.de.40302.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/athene_exp3.3/cvrp-v1__exp3.3_vf-athena_cluster_local_runtime_2__1__1712077050/ckpt/3500.pt" afterDir="false" />
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="Preparation for the next Stream: DAR method with replaced Node Amplifying">
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_evaluate_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_test_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_validation_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_evaluate_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_test_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_validation_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_evaluate_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_test_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_validation_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_evaluate_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_test_seed1234.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_validation_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/1000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/4000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/6000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/6100.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/6300.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/cus_100_veh_5_seed1234_k3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/cus_500_veh_5_seed4321_k3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/cus_50_veh_5_seed1234_k3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/cus_50_veh_5_seed1234_k50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/readme(1).docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/4000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/6000.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/6400.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_100_vehicles_5_seed1234_k50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_100_vehicles_5_seed4321.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_500_vehicles_5_seed_4321_k3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_500_vehicles_5_seed_4321_k50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/cus_50_vehicles_5_seed_1234.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/custom_1000_veh_10_seed_4321.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/custom_25_veh_3_seed_1234.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/argos_exp5.5_DAR_k50_/readme.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate_vrp_with_tw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/HOT_TO_GENERATE_DATA" beforeDir="false" afterPath="$PROJECT_DIR$/data/HOW_TO_GENERATE_DATA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_datasets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_and_plot_trained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,12 +98,13 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dein_el/PycharmProjects/rlor_vrp_fleet&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dein_el/PycharmProjects/rlor_vrp/RLOR/envs&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\RLOR\envs" />
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\runs\Argos_exp5.2_DAR_k10" />
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\runs\argos_exp3.2\cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522\ckpt" />
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\data" />
@@ -94,7 +118,7 @@
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\runs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_and_plot_trained_model">
+  <component name="RunManager" selected="Python.validate_vrp_with_tw">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="rlor_vrp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -108,27 +132,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="model_inference" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="rlor_vrp" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_inference.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -179,28 +182,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_env" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="rlor_vrp" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RLOR/envs" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/envs/test_env.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_models_with_attention_distance_enhancement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_dist_matrxs_for_attention_enhancing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -212,7 +194,49 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/models/test_models_with_attention_distance_enhancement.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/models/test_dist_matrxs_for_attention_enhancing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_tw_with_attenion_enhancing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rlor_vrp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RLOR/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RLOR/models/test_tw_with_attenion_enhancing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="validate_vrp_with_tw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rlor_vrp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/validate_vrp_with_tw.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -223,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_and_plot_trained_model" />
+        <item itemvalue="Python.validate_vrp_with_tw" />
         <item itemvalue="Python.ppo_or" />
-        <item itemvalue="Python.test_models_with_attention_distance_enhancement" />
-        <item itemvalue="Python.test_env" />
-        <item itemvalue="Python.model_inference" />
+        <item itemvalue="Python.test_tw_with_attenion_enhancing" />
+        <item itemvalue="Python.test_and_plot_trained_model" />
+        <item itemvalue="Python.test_dist_matrxs_for_attention_enhancing" />
       </list>
     </recent_temporary>
   </component>
@@ -338,7 +362,21 @@
       <option name="project" value="LOCAL" />
       <updated>1712574481517</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Preparation for the next Stream: DAR method with replaced Node Amplifying">
+      <created>1713426701791</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713426701791</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Preparation for the next Stream: DAR method with replaced Node Amplifying">
+      <created>1713426716752</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1713426716752</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -379,206 +417,277 @@
     <MESSAGE value="added some minor changes. Like arguments to the SyncVectorEnv. No we can parametrize the agent ad-hoc&#10;added GENERATE DATA file as well, for extensie training on argos cluster" />
     <MESSAGE value="DAR Method proposed by WANG 2024: Enhance the attention score in the decoder based on distance. tested ad implemented. A trained model with 400 steps shows better results, then the same model trained with" />
     <MESSAGE value="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)" />
-    <option name="LAST_COMMIT_MESSAGE" value="DAR Method proposed by WANG 2024 + updated reward fnction with log(max_nodes/visited_traj)" />
+    <MESSAGE value="Preparation for the next Stream: DAR method with replaced Node Amplifying" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparation for the next Stream: DAR method with replaced Node Amplifying" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>343</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>171</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/context.py</url>
-          <line>89</line>
+          <line>90</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
-          <line>90</line>
+          <line>98</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
-          <line>93</line>
+          <line>101</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>147</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
           <line>139</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
           <line>129</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
           <line>92</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vector_env.py</url>
           <line>80</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
           <line>18</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
           <line>59</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
           <line>65</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
           <line>68</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <condition expression="self.load == 0" language="Python" />
           <url>file://$PROJECT_DIR$/RLOR/envs/cvrp_vehfleet_env.py</url>
           <line>131</line>
           <option name="timeStamp" value="131" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
           <line>41</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/model_inference.py</url>
           <line>32</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
           <line>25</line>
           <option name="timeStamp" value="166" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
           <line>29</line>
           <option name="timeStamp" value="171" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/decoder.py</url>
           <line>103</line>
           <option name="timeStamp" value="187" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/decoder.py</url>
           <line>98</line>
           <option name="timeStamp" value="188" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/test_models_with_attention_distance_enhancement.py</url>
           <line>88</line>
           <option name="timeStamp" value="194" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/test_models_with_attention_distance_enhancement.py</url>
           <line>90</line>
           <option name="timeStamp" value="195" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/test_models_with_attention_distance_enhancement.py</url>
           <line>92</line>
           <option name="timeStamp" value="196" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/test_models_with_attention_distance_enhancement.py</url>
           <line>70</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>254</line>
-          <option name="timeStamp" value="198" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>267</line>
-          <option name="timeStamp" value="201" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>282</line>
-          <option name="timeStamp" value="202" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>346</line>
-          <option name="timeStamp" value="204" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>327</line>
-          <option name="timeStamp" value="205" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>314</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>307</line>
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>305</line>
-          <option name="timeStamp" value="208" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>329</line>
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>334</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
-          <line>341</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
-          <line>245</line>
+          <line>248</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
-          <line>251</line>
+          <line>254</line>
           <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/test_dist_matrxs_for_attention_enhancing.py</url>
+          <line>261</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/test_dist_matrxs_for_attention_enhancing.py</url>
+          <line>272</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/test_dist_matrxs_for_attention_enhancing.py</url>
+          <line>256</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>124</line>
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/test_dist_matrxs_for_attention_enhancing.py</url>
+          <line>276</line>
+          <option name="timeStamp" value="226" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>286</line>
+          <option name="timeStamp" value="248" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>279</line>
+          <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>282</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>275</line>
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>265</line>
+          <option name="timeStamp" value="273" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>262</line>
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/embedding.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="286" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/embedding.py</url>
+          <line>233</line>
+          <option name="timeStamp" value="287" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="290" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="291" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/decoder.py</url>
+          <line>177</line>
+          <option name="timeStamp" value="297" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/decoder.py</url>
+          <line>208</line>
+          <option name="timeStamp" value="301" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/decoder.py</url>
+          <line>210</line>
+          <option name="timeStamp" value="308" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="309" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/attention_model.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="310" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
+          <line>160</line>
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
+          <line>405</line>
+          <option name="timeStamp" value="328" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>308</line>
+          <option name="timeStamp" value="361" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/embedding.py</url>
+          <line>225</line>
+          <option name="timeStamp" value="362" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/embedding.py</url>
+          <line>232</line>
+          <option name="timeStamp" value="363" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
+          <line>137</line>
+          <option name="timeStamp" value="403" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -592,6 +701,11 @@
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="self" />
+        <watch expression="next_obs" />
+        <watch expression="obs[24].'tw' (2527368857968)" />
+        <watch expression="nextnonterminal" />
+        <watch expression="nextnonterminal" />
+        <watch expression="cur_obs" />
       </configuration>
     </watches-manager>
   </component>

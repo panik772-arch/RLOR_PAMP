@@ -46,6 +46,24 @@ def generate_vrp_data(dataset_size, vrp_size):
         np.full(dataset_size, CAPACITIES[vrp_size]).tolist()  # Capacity, same for whole dataset
     ))
 
+def generate_vrp_with_tw_data(dataset_size, vrp_size, area_scale):
+    CAPACITIES = {
+        10: 20.,
+        30: 25.,
+        20: 30.,
+        50: 40.,
+        75: 45.,
+        100: 50.,
+        500: 200
+    }
+    return list(zip(
+        np.random.uniform(size=(dataset_size, 2)).tolist(),  # Depot location
+        np.random.uniform(size=(dataset_size, vrp_size, 2)).tolist(),  # Node locations
+        np.random.randint(1, 10, size=(dataset_size, vrp_size)).tolist(),  # Demand, uniform integer 1 ... 9
+        np.random.randint(50, area_scale , size=(dataset_size, vrp_size)).tolist(),  # Demand, uniform integer 1 ... 9
+        np.full(dataset_size, CAPACITIES[vrp_size]).tolist()  # Capacity, same for whole dataset
+    ))
+
 
 def generate_op_data(dataset_size, op_size, prize_type='const'):
     depot = np.random.uniform(size=(dataset_size, 2))
@@ -123,13 +141,14 @@ if __name__ == "__main__":
     parser.add_argument("--data_dir", default='data', help="Create datasets in data_dir/problem (default 'data')")
     parser.add_argument("--name", type=str, required=True, help="Name to identify dataset")
     parser.add_argument("--problem", type=str, default='all',
-                        help="Problem, 'tsp', 'vrp', 'pctsp' or 'op_const', 'op_unif' or 'op_dist'"
+                        help="Problem, 'tsp', 'vrp', 'pctsp' or 'op_const', 'vrp_with_tw', 'op_unif' or 'op_dist'"
                              " or 'all' to generate all")
     parser.add_argument('--data_distribution', type=str, default='all',
                         help="Distributions to generate for problem, default 'all'.")
 
     parser.add_argument("--dataset_size", type=int, default=10000, help="Size of the dataset")
-    parser.add_argument('--graph_sizes', type=int, nargs='+', default=[20, 50, 100],
+    parser.add_argument("--area_scale", type=int, default=10000, help="Size of the dataset")
+    parser.add_argument('--graph_sizes', type=int, nargs='+', default=[20, 50, 100, 500],
                         help="Sizes of problem instances (default 20, 50, 100)")
     parser.add_argument("-f", action='store_true', help="Set true to overwrite")
     parser.add_argument('--seed', type=int, default=1234, help="Random seed")
@@ -142,6 +161,7 @@ if __name__ == "__main__":
     distributions_per_problem = {
         'tsp': [None],
         'vrp': [None],
+        'vrp_with_tw': [None],
         'pctsp': [None],
         'op': ['const', 'unif', 'dist']
     }
@@ -179,6 +199,9 @@ if __name__ == "__main__":
                 elif problem == 'vrp':
                     dataset = generate_vrp_data(
                         opts.dataset_size, graph_size)
+                elif problem == 'vrp_with_tw':
+                    dataset = generate_vrp_with_tw_data(
+                        opts.dataset_size, graph_size, opts.area_scale)
                 elif problem == 'pctsp':
                     dataset = generate_pctsp_data(opts.dataset_size, graph_size)
                 elif problem == "op":

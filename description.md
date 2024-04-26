@@ -381,3 +381,49 @@ Date: 09.04.2024
 It makes basically no sense to add DAR method to POMO, because POMO utilize the idea of multiple optimas at the same time and explore the entire solution space at th same time. 
 Whereby DAR method is better for step-by-step solution construction. It would be better for RL, so it can select only neighbor nodes...
 TODO: Try to implemen DAR Method with RLLib and compare to POMO CleanRL... 
+
+
+18.04.2024
+
+I implemented the DAR method for Time sensitive (time preferences) constraints. 
+Assume the case, where the vehicle has limited fleet, cvrp AND some time preferences for customers. 
+First, in that case I adjusted the environment: cvrp_vehfleet_tw_env.py
+added  
+` obs["tw"] = self.tw` and 
+        `obs["traveled_dist"] = self.traveled_dist` to the observation space!
+- in te environment I also added **traveled_time** to the observation, to be able to track the time the vehicle traveled so far. If it returns to depot, it is set to 0 in these trajectories!!
+- Why? because I want to be able to add this time later in "time_to_reach" function to make a prediction, if the customers are reachable or not, and if not. I apply -10 to attenion enhancement factor there. for example 
+- refactored the problem added "cvrp_fleet_tw" extension to encoder and context
+- added --vehicle-speed args in the problem set up in `ppo_or_.py` class 
+
+At the moment I generate the **TW** randomly in **RESET**
+but it would be better, to create or take some benchmark problems for evaluation and training. 
+
+Further refactoring steps
+
+- in `attention_model_wrapper.py` I added following function:
+- `def times_to_reach(self, v = 10): ###` v = vehicle speed! with 10 the traveled distances are small, in a range: 0.01 and 0.1
+
+- where basicly the attention factors are calculated. The main idea is to calculate some attention enhancement factor as 
+- **5/(5x+1)**  for example, where 5 is a scalar to scale/adjust the ratio function. It means this function is almost linear relation within 0 and 5 max. If the x ->0 is small (time preference. means sth like !!hurry up, its urgent!!), the factor is ratio->5
+- if x is -> 5, (so no strong time pressure), the ratio -> 0.BUT if it is smaller than 0, then we already missed the customer, and we do not care about it anymore. so, the attention factor becomes -10
+`torch.where(difference_factor > 0, 5 / (5 * difference_factor + 1), -10)`
+- I also wrote a function to test this and check this, `RLOR/models/test_tw_with_attenion_enhancing.py`
+- additionally, I added "cvrp_fleet_tw" problem and if this is given, we set `use_tanh = False` in MHA attention Score, because I suppose that tanh distribute u values between 0 and 1. like this 
+![img_1.png](img_1.png) or 
+![img_2.png](img_2.png)
+
+so, if the attention scores are between -5 and 5, it makes no difference for attention enhancement here. right?
+
+- added self.v and ATTENTION_SCALING scalars to the stateWrapper. Now its the only one place that control the speed and attention scaling and should be set up before training, for example. 
+- TODO: check the attention factor dispersion! With and WIthout DAR! 
+- for publication: why we do not set the penalty for missing cutomers? Because the customers are optional. for dyamical problems, we do not want to penalize the agent, if it missed today, because the parcel can be delivered tomorrow! 
+
+25.04.2024
+- I checked the DAR models ( `runs/argos_exp5.5_DAR_k50_` and `runs/Athene_exp5.4_DAR_k3_noCustomerPenalty` )
+-  first observation: - it seems that the no_customer_penalty works better. So, get rif of this function with ln sth....
+- second observation: - the DAR method performs somehow slightly better than normal network, with the same number of iteration...
+
+25.04.2024
+- TODO: plot distribution for U with tanh and without tanh function with ratio and without ratio! 
+- - train the model !

@@ -45,15 +45,15 @@ if __name__ == "__main__" :
     #######################
     # Algorithm defintion #
     #######################
-    num_steps = 100
-    num_envs = 1024
-    n_traj = 35
+    num_steps = 25
+    num_envs = 1000
+    n_traj = 2
     total_timesteps = 600000
     learning_rate = 0.01
 
     # ALGO Logic: Storage setup
-    obs = [None] * 100
-    actions = torch.zeros((100, 1024) + envs.single_action_space.shape).to(
+    obs = [None] * num_steps
+    actions = torch.zeros((num_steps, num_envs) + envs.single_action_space.shape).to(
         device
     )
     logprobs = torch.zeros((num_steps, num_envs, n_traj)).to(device)

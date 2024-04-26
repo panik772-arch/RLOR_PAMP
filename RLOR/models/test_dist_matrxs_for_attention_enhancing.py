@@ -68,6 +68,63 @@ def plot_observations_and_distances(nodes, dist_matrix_all, observation_from_dec
     plt.tight_layout()
     plt.show()
 
+
+
+def plot_observations_and_logits(nodes, logits,  observation_from_decoder, dist_vector_current_node,
+                                    current_node_index):
+    """
+    Plots a figure with 4 subplots:
+    1. Original observations of nodes
+    2. Distance matrix for all nodes
+    3. Observations from the decoder
+    4. Distance vector from the current node
+
+    Args:
+    - nodes (np.array): Original observations of nodes with shape (N, 2).
+    - dist_matrix_all (np.array): Distance matrix for all nodes with shape (N, N).
+    - observation_from_decoder (np.array): Observations from the decoder with shape (N, 2).
+    - dist_vector_current_node (np.array): Distance vector from the current node with shape (N,).
+    - current_node_index (int): Index of the current node.
+    """
+
+    fig, axs = plt.subplots(2, 2, figsize=(20, 16))  # Create a figure with 4 subplots
+
+    # Plot 1: Original observations
+    axs[0, 0].scatter(nodes[:, 0], nodes[:, 1], c='blue')
+    for i, (x, y) in enumerate(nodes):
+        axs[0, 0].text(x, y, str(i), color='red', fontsize=9)
+    axs[0, 0].scatter(nodes[current_node_index, 0], nodes[current_node_index, 1], color='red', s=20, marker='X',
+                      label='Current Node')
+    axs[0, 0].set_aspect('equal', adjustable='box')
+    axs[0, 0].set_title('Original Observations')
+
+    # Plot 2: logit distribution from decoder
+    axs[0, 1].bar(np.arange(len(logits)), logits, color='orange')
+    axs[0, 1].set_title(f'Distance Vector from Node {current_node_index}')
+    axs[0, 1].set_xlabel('Node Index')
+    axs[0, 1].set_ylabel('logits from decoder')
+    axs[0, 1].set_xticks(np.arange(len(logits)))
+    axs[0, 1].set_xticklabels(np.arange(len(logits)), rotation=90)  # Rotate for better readability
+
+    # Plot 3: Observations from the decoder
+    axs[1, 0].scatter(observation_from_decoder[:, 0], observation_from_decoder[:, 1], c='green')
+    for i, (x, y) in enumerate(observation_from_decoder):
+        axs[1, 0].text(x, y, str(i), color='purple', fontsize=9)
+    axs[1, 0].scatter(observation_from_decoder[current_node_index, 0], observation_from_decoder[current_node_index, 1], color='red', s=20, marker='X', label='Current Node')
+    axs[1, 0].set_aspect('equal', adjustable='box')
+    axs[1, 0].set_title('Observations from Decoder')
+
+    # Plot 4: Bar plot of the distance vector from the current node
+    axs[1, 1].bar(np.arange(len(dist_vector_current_node)), dist_vector_current_node, color='orange')
+    axs[1, 1].set_title(f'Distance Vector from Node {current_node_index}')
+    axs[1, 1].set_xlabel('Node Index')
+    axs[1, 1].set_ylabel('Distance')
+    axs[1, 1].set_xticks(np.arange(len(dist_vector_current_node)))
+    axs[1, 1].set_xticklabels(np.arange(len(dist_vector_current_node)), rotation=90)  # Rotate for better readability
+
+    plt.tight_layout()
+    plt.show()
+
 def plot_dist(nodes, dist_matrix, fig, axs):
     axs[0].scatter(nodes[:, 0], nodes[:, 1], c='blue', label='Nodes')
     for i, (x, y) in enumerate(nodes):
@@ -178,7 +235,7 @@ if __name__ == "__main__" :
 
             # ALGO LOGIC: action logic
             with torch.no_grad():
-                action, logprob, _, value, _ = agent.get_action_and_value_cached(
+                action, logprob, entropy_, value, state_, logits_ = agent.get_action_and_value_for_DAR(
                     next_obs, state=encoder_state
                 ) # HERE! Decoder comes into play. State = encoder_state is here!
 
@@ -198,6 +255,7 @@ if __name__ == "__main__" :
 
                 action = action.view(num_envs, n_traj)
                 values[step] = value.view(num_envs, n_traj)
+
             actions[step] = action
             logprobs[step] = logprob.view(num_envs, n_traj)
             # TRY NOT TO MODIFY: execute the game and log data.
@@ -214,8 +272,13 @@ if __name__ == "__main__" :
 
             dist_matrix_from_decoder = dist_matrix_attention[0][0]
             dist_matrix_transformed_from_decoder = transformed_distances_attention[0][0]
+            logits_from_decoder = logits_
 
             plot_observations_and_distances(nodes, dist_matrix, observation_from_decoder[0],
+                                            dist_matrix_transformed_from_decoder,
+                                            current_node[0])
+
+            plot_observations_and_logits(nodes, logits_from_decoder[0][0], observation_from_decoder[0],
                                             dist_matrix_transformed_from_decoder,
                                             current_node[0])
 

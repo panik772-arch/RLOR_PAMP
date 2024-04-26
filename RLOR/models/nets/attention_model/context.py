@@ -17,6 +17,7 @@ def AutoContext(problem_name, config):
         "pctsp": PCTSPContext,
         "op": OPContext,
         "cvrp_fleet": CVRPFleetContext,
+        "cvrp_fleet_tw": CVRPFleetTwContext,
     }
     embeddingClass = mapping[problem_name]
     embedding = embeddingClass(**config)
@@ -89,7 +90,7 @@ class PrevNodeContext(nn.Module):
         # Concatenate this zeros tensor to the beginning of the second dimension of prev_node_embedding
         #prev_node_embedding_padded = torch.cat((zeros_padding, prev_node_embedding), dim=1)
 
-        context_embedding = torch.cat((prev_node_embedding, state_embedding), -1) #in cvrp_env (1024,50,129) and in cvrp_fleet_env ->(1024,35,130)
+        context_embedding = torch.cat((prev_node_embedding, state_embedding), -1) #in cvrp_env (1024,50,129) and in cvrp_fleet_env ->(1024,35,130) or even (1024,35,131) in tw env
         return context_embedding
 
 
@@ -269,5 +270,16 @@ class CVRPFleetContext(PrevNodeContext):
         #state_embedding = torch.cat((vehicles[:,None,None],state_embedding,), -2) # -> (1024, 51, 1) Concantenate 50 nodes AND num  of vehicles as Depot
         state_embedding = torch.cat(( state_embedding,vehicles[:,:, None]),-1) #(1024,35,2)
         #state.VEHICLE_CAPACITY - state.used_capacity[:, :, None]
+        return state_embedding
+
+class CVRPFleetTwContext(PrevNodeContext):
+    ## No chnges here compared to CVRPFleetContext
+    def __init__(self, context_dim):
+        super(CVRPFleetTwContext, self).__init__(context_dim)
+
+    def _state_embedding(self, embeddings, state):
+        state_embedding = -state.used_capacity[:, :, None]
+        vehicles = state.get_num_veh()
+        state_embedding = torch.cat((state_embedding, vehicles[:,:, None]),-1) #(1024,35,2)
         return state_embedding
 

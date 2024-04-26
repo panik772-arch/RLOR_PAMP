@@ -148,7 +148,7 @@ if __name__ == "__main__":
 
     env_ = CVRPFleetEnv()
 
-    ckpt_path = "runs/Argos_exp5.2_DAR_k10/9100.pt"#"runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
+    ckpt_path = "runs/Athene_exp5.4_DAR_k3_noCustomerPenalty/6300.pt" #"runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
     #"runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/5000.pt"#"runs/athene_exp3.3/cvrp-v1__exp3.3_vf-athena_cluster_local_runtime_2__1__1712077050/ckpt/1000.pt" #
 
     agent = Agent(device=device, name='cvrp_fleet', k = 3).to(device)
@@ -156,7 +156,6 @@ if __name__ == "__main__":
 
     env_id = 'cvrp-v1'
     env_entry_point = 'RLOR.envs.cvrp_vehfleet_env:CVRPFleetEnv'
-
 
     gym.envs.register(
         id=env_id,
@@ -174,9 +173,12 @@ if __name__ == "__main__":
             return env
 
         return thunk
-    vehicles = 10
-    seed = 4321
-    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=1, max_nodes = 1000, max_num_vehicles = vehicles, penalty = 10))])
+    vehicles = 5
+    seed = 3214
+    # if its 2000 (min) we visit customers occasionally. Only min distance is matter. So, the vehicle trys to minimize the toures and results in shorter distance and less tours
+    # if 10 000 is chosen, the vehicle trys to collect as many as possible and so, results in longer tours
+    prize_for_visiting_customer = 2000 # 10000
+    envs = SyncVectorEnv([make_env(env_id, seed, dict(n_traj=500, max_nodes = 500, max_num_vehicles = vehicles, penalty = 10))])
     obs = envs.reset()
 
     '''
@@ -199,9 +201,10 @@ if __name__ == "__main__":
 
     clients = [
         m.add_client(x=int(nodes[idx][0] * scale), y=int(nodes[idx][1] * scale), demand=int(demand[idx] * scale),
-                     prize=scale, required=False
+                     prize= prize_for_visiting_customer ,
+                     required=False
                      )
-        for idx in range(1, len(nodes))
+        for idx in range(0, len(nodes))
     ]
 
     locations = [depot] + clients

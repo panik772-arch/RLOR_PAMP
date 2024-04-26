@@ -16,6 +16,7 @@ def AutoDynamicEmbedding(problem_name, config):
         "pctsp": NonDyanmicEmbedding,
         "op": NonDyanmicEmbedding,
         "cvrp_fleet": NonDyanmicEmbedding,
+        "cvrp_fleet_tw": NonDyanmicEmbedding #CVRPTWDyanmicEmbedding,
     }
     embeddingClass = mapping[problem_name]
     embedding = embeddingClass(**config)
@@ -45,9 +46,33 @@ class SDVRPDynamicEmbedding(nn.Module):
 
     def forward(self, state):
         glimpse_key_dynamic, glimpse_val_dynamic, logit_key_dynamic = self.projection(
-            state.demands_with_depot[:, 0, :, None].clone()
+            state.demands_with_depot[:, None, :].clone()
         ).chunk(3, dim=-1)
         return glimpse_key_dynamic, glimpse_val_dynamic, logit_key_dynamic
+
+
+class CVRPTWDyanmicEmbedding(nn.Module):
+
+    def __init__(self, embedding_dim):
+        super(CVRPTWDyanmicEmbedding, self).__init__()
+
+        self.projection = nn.Linear(1, 3 * embedding_dim, bias=False)
+
+    def forward(self, state):
+
+        '''
+        doesnt work yet. I need to decide, do I want to process all nodes and for each ratio node generate key, value, logitsX128 ?
+        Or do i want to supply all 51 nodes to this function andgenerate 3 embeddings. What does itmean? I use as a key the whole problem state, like a graph context, right?
+        # Note, in decoder I add these dynamic embeddings to te nodes of the shape [batch, nodes, 128] so it is basically NO trajectories in here!
+        This is important! because here I generate trajectories as well
+        '''
+
+        ratio = state.tw_ratio()
+        glimpse_key_dynamic, glimpse_val_dynamic, logit_key_dynamic = self.projection(
+            ratio.clone()
+        ).chunk(3, dim=-1)
+        return glimpse_key_dynamic, glimpse_val_dynamic, logit_key_dynamic
+
 
 
 class NonDyanmicEmbedding(nn.Module):

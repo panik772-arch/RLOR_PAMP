@@ -36,11 +36,11 @@ def parse_args():
         help="whether to capture videos of the agent performances (check out `videos` folder)")
 
     # Algorithm specific arguments
-    parser.add_argument("--problem", type=str, default="cvrp_fleet",
+    parser.add_argument("--problem", type=str, default="cvrp_fleet_tw",
         help="the OR problem we are trying to solve, it will be passed to the agent")
     parser.add_argument("--env-id", type=str, default="cvrp-v1",
         help="the id of the environment")
-    parser.add_argument("--env-entry-point", type=str, default="envs.cvrp_vehfleet_env:CVRPFleetEnv",
+    parser.add_argument("--env-entry-point", type=str, default="envs.cvrp_vehfleet_tw_env:CVRPFleetTWEnv",
         help="the path to the definition of the environment, for example `envs.cvrp_vector_env:CVRPVectorEnv` if the `CVRPVectorEnv` class is defined in ./envs/cvrp_vector_env.py")
     parser.add_argument("--total-timesteps", type=int, default=6_000_000_000,
         help="total timesteps of the experiments")
@@ -84,6 +84,8 @@ def parse_args():
         help="whether to use multiple trajectory greedy inference")
     parser.add_argument("--k-neighbors", type=int, default=10,
                         help="number of neighbors to attend during the route search")
+    parser.add_argument("--vehicle_speed", type=int, default=10,
+                        help="vehicle speed fpr DAR attention enhancement")
     args = parser.parse_args()
     args.batch_size = int(args.num_envs * args.num_steps)
     args.minibatch_size = int(args.batch_size // args.num_minibatches)
@@ -249,22 +251,28 @@ if __name__ == "__main__":
         writer.add_scalar("charts/episodic_return_mean", avg_episodic_return, global_step)
         writer.add_scalar("charts/episodic_return_max", max_episodic_return, global_step)
         writer.add_scalar("charts/episodic_length", avg_episodic_length, global_step)
-        # bootstrap value if not done
+        # bootstrap value if not done. Calculate baseline values and returns here!
+
         with torch.no_grad():
-            next_value = agent.get_value_cached(next_obs, encoder_state).squeeze(-1)  # B x T
+            next_value = agent.get_value_cached(next_obs, encoder_state).squeeze(-1)  # B x T  This line fetches the estimated value of the next state V(st+1)V(s_t+1) using the critic network. This value is treated as the baseline for the next state.
             advantages = torch.zeros_like(rewards).to(device)  # steps x B x T
             lastgaelam = torch.zeros(args.num_envs, args.n_traj).to(device)  # B x T
+            #calculate values for env where not done, else use values from previous execution
             for t in reversed(range(args.num_steps)):
+                # in the first step, because we do bootstraping according to TD learning, we use next value, which is a last terminated state! basically obs_steps+1
                 if t == args.num_steps - 1:
                     nextnonterminal = 1.0 - next_done  # next_done: B
                     nextvalues = next_value  # B x T
+                # if we are in step num_step-1 for example, so we can use values[t+1] directly! bootstraping works here fine
                 else:
                     nextnonterminal = 1.0 - dones[t + 1]
                     nextvalues = values[t + 1]  # B x T
-                delta = rewards[t] + args.gamma * nextvalues * nextnonterminal - values[t]
+                # The advantage is calculated using Generalized Advantage Estimation (GAE) reverse.. next_value is t+1..if in t+1 not done, then perform calculation. if done = 1, than use only  value here without bootstraping. because we are in the last state.
+                delta = rewards[t] + args.gamma * nextvalues * nextnonterminal - values[t] #  values[t] (or V(s_t)) is the baseline for the current state state s_t. The difference between the estimated return (rewards[t] + args.gamma * nextvalues * nextnonterminal) and the baseline (values[t]) gives you the temporal difference error δδ, which is a crucial component in calculating the advantage.
                 advantages[t] = lastgaelam = (
                     delta + args.gamma * args.gae_lambda * nextnonterminal * lastgaelam
                 )
+
             returns = advantages + values
 
         # flatten the batch
@@ -286,23 +294,34 @@ if __name__ == "__main__":
         flatinds = np.arange(args.batch_size).reshape(args.num_steps, args.num_envs)
 
         clipfracs = []
+        # we do 2 weight updates per each epoch here! for example
         for epoch in range(args.update_epochs):
             np.random.shuffle(envinds)
             for start in range(0, args.num_envs, envsperbatch):
                 end = start + envsperbatch
                 mbenvinds = envinds[start:end]  # mini batch env id
+                # because we want take te step which stems from the same env indexed in minibatches. we need to be careful here
                 mb_inds = flatinds[:, mbenvinds].ravel()  # be really careful about the index
                 r_inds = np.tile(np.arange(envsperbatch), args.num_steps)
 
                 cur_obs = {k: v[mbenvinds] for k, v in obs[0].items()}
+                # encode minibatch of the size 128  so, we get here the encoder state a tuple(1,2,3,4,5) of cached embddings from _precompute() where
+                #  graph_context,glimpse_key, glimpse_val,logit_key:  graph_context is of the size (128, N, 128) where first 128 is minibatch size and last - ebeding dim
+                #glimpse_key has the size (128, 1, 128)  for example
                 encoder_state = agent.backbone.encode(cur_obs)
+                # now, for each encoded state calculate 3200 (128 minibatches x 25 steps=3200)
+                # here note! I use different indexes for encoder states and for observations and actions. WHY?
+                # because we already consider i.e. already computed our encoded states from this batches and observations in the same order. makes sense?
                 _, newlogprob, entropy, newvalue, _ = agent.get_action_and_value_cached(
                     {k: v[mb_inds] for k, v in b_obs.items()},
                     b_actions.long()[mb_inds],
                     (embedding[r_inds, :] for embedding in encoder_state),
                 )
                 # _, newlogprob, entropy, newvalue = agent.get_action_and_value({k:v[mb_inds] for k,v in b_obs.items()}, b_actions.long()[mb_inds])
+                #This line calculates the log ratio of the probabilities of the actions taken, according to the new policy (newlogprob) versus the log probabilities under the old policy (b_logprobs), which were recorded at the time these actions were originally taken.
+                # This log ratio is critical in methods like PPO for calculating how much the policy has changed, which influences the policy update step.
                 logratio = newlogprob - b_logprobs[mb_inds]
+                # By exponentiating the logratio, you convert it back from a log space to a normal ratio. This ratio is used in calculating the objective function in PPO, where it directly modulates the advantage estimates in the policy gradient calculation.
                 ratio = logratio.exp()
 
                 with torch.no_grad():
@@ -365,7 +384,7 @@ if __name__ == "__main__":
         writer.add_scalar("losses/explained_variance", explained_var, global_step)
         print("SPS:", int(global_step / (time.time() - start_time)))
         writer.add_scalar("charts/SPS", int(global_step / (time.time() - start_time)), global_step)
-        if update % 10 == 0 or update == num_updates:
+        if update % 100 == 0 or update == num_updates:
             torch.save(agent.state_dict(), f"runs/{run_name}/ckpt/{update}.pt")
         if update % 100 == 0 or update == num_updates:
             agent.eval()
