@@ -50,7 +50,7 @@ def parse_args():
         help="the weight decay of the optimizer")
     parser.add_argument("--num-envs", type=int, default=1024,
         help="the number of parallel game environments")
-    parser.add_argument("--num-steps", type=int, default=100,
+    parser.add_argument("--num-steps", type=int, default=120,
         help="the number of steps to run in each environment per policy rollout")
     parser.add_argument("--anneal-lr", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="Toggle learning rate annealing for policy and value networks")
@@ -84,7 +84,7 @@ def parse_args():
         help="whether to use multiple trajectory greedy inference")
     parser.add_argument("--k-neighbors", type=int, default=10,
                         help="number of neighbors to attend during the route search")
-    parser.add_argument("--vehicle_speed", type=int, default=10,
+    parser.add_argument("--vehicle_speed", type=int, default=50,
                         help="vehicle speed fpr DAR attention enhancement")
     args = parser.parse_args()
     args.batch_size = int(args.num_envs * args.num_steps)

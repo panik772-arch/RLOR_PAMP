@@ -69,7 +69,7 @@ if __name__ == "__main__":
     eval_data = False
     eval_partition = "eval"
     eval_data_idx = 0
-    region_scale = 10000
+    region_scale = 15000
     vehicles = 5
     v = 50 #speed in km/h
     prize_for_visiting = 5000 #2000 min and 10000 max
@@ -143,7 +143,7 @@ if __name__ == "__main__":
     #######################################################
     # RL OR AGENT
 
-    ckpt_path = "RLOR/runs/cvrp-v1__ppo_or__1__1714136363/ckpt/4.pt"  # "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
+    ckpt_path =  "runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt" #"RLOR/runs/cvrp-v1__ppo_or__1__1714136363/ckpt/4.pt" #"runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt"  # "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
     # "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/5000.pt"#"runs/athene_exp3.3/cvrp-v1__exp3.3_vf-athena_cluster_local_runtime_2__1__1712077050/ckpt/1000.pt" #
     device = 'cpu'
     agent = Agent(device=device, name='cvrp_fleet_tw', k=3).to(device)

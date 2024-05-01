@@ -56,7 +56,7 @@ class AttentionScore(nn.Module):
         u = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(query.size(-1))
 
         if state is not None and state.problem == "cvrp_fleet_tw":
-            self.use_tanh = True
+            self.use_tanh = False
             ratio, _,_,_ = state.tw_ratio()
             #Apply the transformation across the entire dist_matrix first
             # tw_ratio between [0,1]. if it >1 -> -inf, so not reachable.. if it 0, no time pressure. if it goes -> 1, time pressure increase..

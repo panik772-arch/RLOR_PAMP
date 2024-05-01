@@ -1,13 +1,15 @@
 import logging
 import pickle
-
+import os
 import numpy as np
 
-root_dir = "C:\\Users\\dein_el\\PycharmProjects\\rlor_vrp\\data\\vrp_tw\\vrp_with_tw\\"
-
+current_script_path = os.path.abspath(__file__)
+current_script_dir = os.path.dirname(current_script_path)
+project_root = os.path.normpath(os.path.join(current_script_dir, '..', '..', '..'))
+root_dir = os.path.join(project_root, 'rlor_vrp', 'data', 'vrp_tw', 'vrp_with_tw')
 
 def load(filename, root_dir=root_dir):
-    return pickle.load(open(root_dir + filename, "rb"))
+    return pickle.load(open(root_dir + '\\' +filename, "rb"))
 
 
 file_catalog = {

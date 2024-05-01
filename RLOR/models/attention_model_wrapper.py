@@ -122,11 +122,11 @@ class Agent(nn.Module):
         else:
             x = self.backbone.decode(x, state)
         logits = self.actor(x) # as same as mask shape.. 1024,50,51 for example
+        #print("Any NaNs in logits?", torch.isnan(logits).any())
         probs = torch.distributions.Categorical(logits=logits)
         if action is None:
             action = probs.sample() # (batch, n_traj) e.g. in cvrp_env return action for each batch and trajectory -> (1024,50)
         return action, probs.log_prob(action), probs.entropy(), self.critic(x), state
-
 
     def get_action_and_value_for_DAR(self, x, action=None, state=None):
         ## only added logits to return, in order to plot it in testing. Created additional methos, in order to avoid refactoring for all code
@@ -215,7 +215,7 @@ class stateWrapper:
         v = self.v
         if self.v is None:
             v = 50
-        scale = 10000
+        scale = 15000
         v_ms = ((v/3600)*scale) / scale  # convert to m/s and for 10 000 area_scale factor ! should be ca. 0.0014 if v = 50
 
         # now these values are rescaled between 50 and 10 000 according to tw input and because my dist is between 0-1,
