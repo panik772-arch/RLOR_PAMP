@@ -29,7 +29,7 @@ class CVRPFleetTWEnv(gym.Env):
         self.eval_data_idx = 0
         self.demand_limit = 10
         self.penalty = 10
-        self.region_scale = 15000 # 10kmx10km region for time-windows. We need this to distribute the tw for further calculation in attentionModelWrapper
+        self.region_scale = 10000 # 10kmx10km region for time-windows. We need this to distribute the tw for further calculation in attentionModelWrapper
         assign_env_config(self, kwargs)
 
         obs_dict = {"observations": spaces.Box(low=0, high=1, shape=(self.max_nodes, 2))}
@@ -183,7 +183,7 @@ class CVRPFleetTWEnv(gym.Env):
         )
 
         self.tw = (
-                np.random.randint(low=100, high=self.region_scale, size=self.max_nodes) ##self.region_scale
+                np.random.randint(low=50, high=self.region_scale, size=self.max_nodes) ##self.region_scale
                 #/ self.region_scale #nomalize this
         )
 

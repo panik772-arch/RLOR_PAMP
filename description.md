@@ -426,4 +426,34 @@ so, if the attention scores are between -5 and 5, it makes no difference for att
 
 25.04.2024
 - TODO: plot distribution for U with tanh and without tanh function with ratio and without ratio! 
-- - train the model !
+- - train the model!
+- 
+02.05.2024
+- I add the PAMP method. So it is big t describe, but the main idea is to add a time factor, which is calculated as a travel time to the customer from the current node divided by the deadline (deadline = fixed time constraint - already traveled time so far)
+- so the method utilize the DAR Idea, enhancing the attention score in pointer. If the time-factor is greater 1 or less than 0 (0<tf<1) the nodes will be masked. It means, the time deadline it expired and the customer can not be visited. 
+- than we add this time factor to the TANH(u) + tf and THAN do clipping -> (tanh(u) + tf)+Clipping ! Originally, it was tanh(u+tf) * CLipping. I want just to ensure, that u and tf are approximately in the same range!
+  - check both. maybe the first option will work, maybe second, maybe it makes no difference. How to check?
+  - first train with the normal original setup and check: tanh(u+tf) *Clipping
+- I also added TW to the embeddings! 
+- to change the TW range we need to do following:
+  - -> create a new evaluation set with new range for evaluation
+  - -> change the range in the environment in reset load and radom generate
+  - -> change the range in the stateWrapper! 
+- I started 2 simulations /training on server: check the file how to start it on: C:\tmp\CLUSTER THROUGH PUTTY(train nco model).txt
+- one is on argos from the repo rlor_fleet:
+https://cluster:n79CvMEKFC22Esoys_D_@gitlab.dlr.de/StratGut/rl4log/end2end-nco-for-vrp-with-finite-fleet/rlor_vrp.git
+  - here is a current code with 100-15000 time scale and standart Tanh(u+timeratio) *Clipp for ppo! 
+- another one runs on herakles from repo  clone https://colab:M7fg9mq5aGJapfw5U_P6@gitlab.dlr.de/StratGut/rl4log/end2end-nco-for-vrp-with-finite-fleet/rlor_vrp_DAR_method.git
+  - here is also a PAMP method but with 50-10000 scale and standrt tanh as well. Wait for 5 days ad look what happens..
+  
+03.05.2024
+try to use only nodes in dynamic embeddings and in context only trajectories. will it work?
+Context:
+
+ratio, deadlines_requested, traveled_time, calculate_times_from_this_to_all = state.tw_ratio()
+        ratio_trajectories = ratio.squeeze(-1)
+
+Dynamic Embeddings: ratio, deadlines_requested, traveled_time, calculate_times_from_this_to_all = state.tw_ratio()
+        ratio_nodes = ratio.squeeze(-2)
+
+I Changed:  self.context_dim = embedding_dim + 3  in Embeddings, added to context the travel times and to the dynamic embeddings TW

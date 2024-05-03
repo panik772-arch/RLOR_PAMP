@@ -177,17 +177,18 @@ if __name__ == "__main__":
         entry_point="RLOR.envs.cvrp_vehfleet_tw_env:CVRPFleetTWEnv",
     )
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    num_steps = 100
+    num_steps = 50
     num_envs = 10
-    n_traj = 50
+    n_traj = 1
     total_timesteps = int(num_steps * num_envs)
     learning_rate = 0.01
     K_factor = V = 50
-    max_nodes = 50
+    max_nodes = 10
+    time_scale = 2000
     problem = "cvrp_fleet_tw"
     # training env setup
     envs = SyncVectorEnv(
-        [make_env("cvrp_v1", 1234 + i, cfg={"n_traj": n_traj, "max_nodes": max_nodes}) for i in range(num_envs)])
+        [make_env("cvrp_v1", 1234 + i, cfg={"n_traj": n_traj, "max_nodes": max_nodes, "region_scale": time_scale}) for i in range(num_envs)])
 
     agent = Agent(device=device, name=problem, k=K_factor).to(device)
     # agent.backbone.load_state_dict(torch.load('./vrp50.pt'))

@@ -67,9 +67,10 @@ class CVRPTWDyanmicEmbedding(nn.Module):
         This is important! because here I generate trajectories as well
         '''
 
-        ratio = state.tw_ratio()
+        #we have n_traj nodes in each state, so I need to find a way how to solve this first. It make also not much sense to add deadlines to nodes embeddings because deadlines depend on the last n_traj nodes, and so are different for each trajectory
+        tw = state.calculate_distance_to_all_nodes() / state.v_ms
         glimpse_key_dynamic, glimpse_val_dynamic, logit_key_dynamic = self.projection(
-            ratio.clone()
+            tw.squeeze()
         ).chunk(3, dim=-1)
         return glimpse_key_dynamic, glimpse_val_dynamic, logit_key_dynamic
 

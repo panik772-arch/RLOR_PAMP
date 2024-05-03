@@ -17,7 +17,7 @@ def AutoEmbedding(problem_name, config):
         "pctsp": PCTSPEmbedding,
         "op": OPEmbedding,
         "cvrp_fleet": CVRPFleetEmbeddings,
-        "cvrp_fleet_tw": CVRPFleetTwEmbeddings,
+        "cvrp_fleet_tw": CVRPFleetTwEmbeddings #CVRPFleetEmbeddings, #CVRPFleetTwEmbeddings,
     }
     embeddingClass = mapping[problem_name]
     embedding = embeddingClass(**config)
@@ -261,10 +261,10 @@ class CVRPFleetTwEmbeddings(nn.Module):
 
     def __init__(self, embedding_dim):
         super(CVRPFleetTwEmbeddings, self).__init__()
-        node_dim = 4  # x, y, demand
+        node_dim = 4  # x, y, demand, tw
         scalar = 1
 
-        self.context_dim = embedding_dim + 2  # Embedding of last node + remaining_capacity
+        self.context_dim = embedding_dim + 3  # Embedding of last node + remaining_capacity
         self.init_embed = nn.Linear(node_dim, embedding_dim)
         self.init_embed_depot = nn.Linear(2,
                                           embedding_dim)  # depot embedding PLUS num of vehicles as the 3 feature

@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="added PAMP method. pointer amplifier for hard time constraints. Added new environment, attention score amplifier in wrapper, which in turn scale the attention score in decoder, and also added tw to embeddings!">
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/events.out.tfevents.1714518042.VF-070237N.31128.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_test_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_test_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_test_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_test_seed4321.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp5_PAMP_localrun_tanhUfirst__1__1714640760/events.out.tfevents.1714640782.VF-070237N.27688.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp5_PAMP_localrun_tanhUfirst__1__1714640760/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp8.1_PAMP_localrun_NoTWEmbeddings__1__1714727308/events.out.tfevents.1714727327.VF-070237N.20392.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp8.1_PAMP_localrun_NoTWEmbeddings__1__1714727308/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_validation_seed4321.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_validation_seed4321.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_validation_seed4321.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_validation_seed4321.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_datasets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validate_vrp_with_tw.py" beforeDir="false" afterPath="$PROJECT_DIR$/validate_vrp_with_tw.py" afterDir="false" />
     </list>
@@ -88,7 +94,7 @@
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\runs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.validate_vrp_with_tw">
+  <component name="RunManager" selected="Python.ppo_or">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="rlor_vrp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -217,9 +223,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ppo_or" />
         <item itemvalue="Python.validate_vrp_with_tw" />
         <item itemvalue="Python.test_tw_with_attenion_enhancing" />
-        <item itemvalue="Python.ppo_or" />
         <item itemvalue="Python.test_and_plot_trained_model" />
         <item itemvalue="Python.test_dist_matrxs_for_attention_enhancing" />
       </list>
@@ -354,19 +360,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -405,12 +399,12 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
-          <line>98</line>
+          <line>104</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
-          <line>101</line>
+          <line>107</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -546,32 +540,32 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>286</line>
+          <line>274</line>
           <option name="timeStamp" value="248" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>279</line>
+          <line>267</line>
           <option name="timeStamp" value="265" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>282</line>
+          <line>270</line>
           <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>275</line>
+          <line>263</line>
           <option name="timeStamp" value="272" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>265</line>
+          <line>253</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>262</line>
+          <line>250</line>
           <option name="timeStamp" value="274" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -626,12 +620,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="311" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
-          <line>160</line>
+          <line>166</line>
           <option name="timeStamp" value="313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -641,18 +630,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>308</line>
+          <line>296</line>
           <option name="timeStamp" value="361" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/embedding.py</url>
-          <line>225</line>
-          <option name="timeStamp" value="362" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/embedding.py</url>
-          <line>232</line>
-          <option name="timeStamp" value="363" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
@@ -675,9 +654,34 @@
           <option name="timeStamp" value="409" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/envs/vrp_data_with_tw.py</url>
-          <line>11</line>
-          <option name="timeStamp" value="410" />
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>233</line>
+          <option name="timeStamp" value="411" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="412" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="413" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/dynamic_embedding.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="414" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/dynamic_embedding.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="422" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
+          <line>255</line>
+          <option name="timeStamp" value="424" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

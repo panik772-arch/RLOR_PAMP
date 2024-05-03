@@ -138,7 +138,7 @@ class Agent(nn.Module):
         logits = self.actor(x) # as same as mask shape.. 1024,50,51 for example
         probs = torch.distributions.Categorical(logits=logits)
         if action is None:
-            action = probs.sample() # (batch, n_traj) e.g. in cvrp_env return action for each batch and trajectory -> (1024,50)
+           action = logits.max(2)[1]#probs.sample() # (batch, n_traj) e.g. in cvrp_env return action for each batch and trajectory -> (1024,50)
         return action, probs.log_prob(action), probs.entropy(), self.critic(x), state, logits
 
 class stateWrapper:
@@ -185,9 +185,10 @@ class stateWrapper:
             self.states["observations"] = input
             self.VEHICLE_CAPACITY = 0
             self.used_capacity = -self.states["current_load"]
-            self.v = 50 #vehicle speed km/h
             self.ATTENTION_SCALING = 1
-
+            v = 50  # vehicle speed km/h
+            self.scale = 10000
+            self.v_ms = ((v / 3600) * self.scale) / self.scale #normalized speed  # convert to m/s and for 10 000 area_scale factor ! should be ca. 0.0014 if v = 50
 
     def calculate_distance_to_all_nodes(self):
         current_node = self.get_current_node() # index
@@ -212,16 +213,12 @@ class stateWrapper:
 
 
     def tw_ratio(self):
-        v = self.v
-        if self.v is None:
-            v = 50
-        scale = 15000
-        v_ms = ((v/3600)*scale) / scale  # convert to m/s and for 10 000 area_scale factor ! should be ca. 0.0014 if v = 50
-
+        if self.v_ms is None:
+            self.v_ms = 0.0014
         # now these values are rescaled between 50 and 10 000 according to tw input and because my dist is between 0-1,
-        traveled_time = self.get_traveled_dist() / v_ms  # (5,1) in 5 traj each 1 node
+        traveled_time = self.get_traveled_dist() / self.v_ms  # (5,1) in 5 traj each 1 node
 
-        calculate_times_from_this_to_all = self.calculate_distance_to_all_nodes() / v_ms  # (5,1,11)
+        calculate_times_from_this_to_all = self.calculate_distance_to_all_nodes() / self.v_ms  # (5,1,11)
 
         #deadline = calculate_times_from_this_to_all - traveled_time.unsqueeze(-1) # deadline reduces in every step for each customer
         deadline = self.get_tw()
@@ -232,24 +229,15 @@ class stateWrapper:
         # here I add depot value as max area_scale aka 10 000 because we divde by this factor and when it max, i.e. the ratio becomes small , we don#t need to hurry
         # ..so depot is like allways open and allways available because for depot the deadline is like 10 000 s , so max
         ones = torch.ones((num_batches, num_traj), dtype=deadlines.dtype, device=deadlines.device)
-        deadlines_requested = torch.cat((ones[:,:,None]+scale, deadlines), dim=-1)
+        deadlines_requested = torch.cat((ones[:,:,None]+self.scale, deadlines), dim=-1)
 
         ratio = calculate_times_from_this_to_all / deadlines_requested
 
         return ratio, deadlines_requested, traveled_time, calculate_times_from_this_to_all
 
-    def times_to_reach(self):
-
+    #depricated
+    def times_to_reach_all_nodes(self):
         '''
-        Calculate  time importance factor for each batch and each trajectory.
-        Args: vehicle speed V. If the speed is high, so the distance can be crossed quick, and it means, we can quickly serve all customers and meet all tw. So is the theory behind this..Check it
-        if the speed is slow (v=1 for example, means dist = time), we do not meet tw often and a lot of customers become not reachable, meaning
-        'calculate_time_from_this_to_all + traveled_time.unsqueeze(-1)' is  something > 1, and so, if the TW are considered to be normalized between 0 and 1 ()
-        the term difference_factor = times_requested - updated_times will result in negative values, meaning we can not reach this node, and so we add
-        -10 to these nodes: ratio = torch.where(difference_factor > 0, 5 / (5 * difference_factor + 1), -10)
-
-        if the time windows are big, so we don't need to hurry and the distance become small. if the factor is high, so the factor decrease
-        ## if the distance is large and time is small, so (time=1/dist=10) this factor becomes ->0 and so, high -log() value or importance
 
         Returns:
             ratio -> factor for the attention enhancement (B,traj, N)

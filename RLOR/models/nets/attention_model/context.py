@@ -279,7 +279,10 @@ class CVRPFleetTwContext(PrevNodeContext):
 
     def _state_embedding(self, embeddings, state):
         state_embedding = -state.used_capacity[:, :, None]
+
+        traveled_time = state.get_traveled_dist() / state.v_ms
+
         vehicles = state.get_num_veh()
-        state_embedding = torch.cat((state_embedding, vehicles[:,:, None]),-1) #(1024,35,2)
+        state_embedding = torch.cat((state_embedding, traveled_time[:,:,None],vehicles[:,:, None]),-1) #(1024,35,2)
         return state_embedding
 

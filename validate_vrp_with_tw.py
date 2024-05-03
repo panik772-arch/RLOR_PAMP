@@ -54,7 +54,7 @@ def make_env():
         return thunk
 
     vehicles = 5
-    seed = 3214
+    seed = 1234
     # if its 2000 (min) we visit customers occasionally. Only min distance is matter. So, the vehicle trys to minimize the toures and results in shorter distance and less tours
     # if 10 000 is chosen, the vehicle trys to collect as many as possible and so, results in longer tours
     envs = SyncVectorEnv(
@@ -69,10 +69,10 @@ if __name__ == "__main__":
     eval_data = False
     eval_partition = "eval"
     eval_data_idx = 0
-    region_scale = 15000
+    region_scale = 10000
     vehicles = 5
     v = 50 #speed in km/h
-    prize_for_visiting = 5000 #2000 min and 10000 max
+    prize_for_visiting = 10000 #2000 min and 10000 max
 
     obs, envs = make_env()
     nodes = obs["observations"][0]
@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
 
     TIME_WINDOWS = [(0, int(tw[idx])) for idx in range(nodes.shape[0])]
-    TIME_WINDOWS_depot = [0, 10000]
+    TIME_WINDOWS_depot = [0, region_scale]
 
     depot = m.add_depot(x=int(dep[0] * region_scale),
                         y=int(dep[1] * region_scale),

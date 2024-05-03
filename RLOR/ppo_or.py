@@ -20,7 +20,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--exp-name", type=str, default=os.path.basename(__file__).rstrip(".py"),
         help="the name of this experiment")
-    parser.add_argument("--seed", type=int, default=1,
+    parser.add_argument("--seed", type=int, default=1234,
         help="seed of the experiment")
     parser.add_argument("--torch-deterministic", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="if toggled, `torch.backends.cudnn.deterministic=False`")
@@ -42,7 +42,7 @@ def parse_args():
         help="the id of the environment")
     parser.add_argument("--env-entry-point", type=str, default="envs.cvrp_vehfleet_tw_env:CVRPFleetTWEnv",
         help="the path to the definition of the environment, for example `envs.cvrp_vector_env:CVRPVectorEnv` if the `CVRPVectorEnv` class is defined in ./envs/cvrp_vector_env.py")
-    parser.add_argument("--total-timesteps", type=int, default=6_000_000_000,
+    parser.add_argument("--total-timesteps", type=int, default=6_000_000, #_000
         help="total timesteps of the experiments")
     parser.add_argument("--learning-rate", type=float, default=1e-3,
         help="the learning rate of the optimizer")

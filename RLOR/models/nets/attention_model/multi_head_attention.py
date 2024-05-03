@@ -56,13 +56,19 @@ class AttentionScore(nn.Module):
         u = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(query.size(-1))
 
         if state is not None and state.problem == "cvrp_fleet_tw":
-            self.use_tanh = False
+            self.use_tanh = True
             ratio, _,_,_ = state.tw_ratio()
             #Apply the transformation across the entire dist_matrix first
             # tw_ratio between [0,1]. if it >1 -> -inf, so not reachable.. if it 0, no time pressure. if it goes -> 1, time pressure increase..
             # so we want to attend to nodes with high time pressure
-            time_ratio = torch.where(ratio > 1, float("-inf"), ratio)
-            u += time_ratio
+            # if the deadline is behind the already traveled time, it can result in -ratio, so handle this case too.
+            time_ratio = torch.where((ratio > 1) | (ratio < 0), float("-inf"), ratio)
+           #first tanh to project u between -1 and 1
+
+            #u = torch.tanh(u)
+            # add linear time factor and clipping
+            u = (u + time_ratio) #* self.C
+            #u = u * self.C
 
             #transformed_distances, _ = state.return_topK_closest()
             # Adjust u based on transformed_distances directly
