@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="added PAMP method. pointer amplifier for hard time constraints. Added new environment, attention score amplifier in wrapper, which in turn scale the attention score in decoder, and also added tw to embeddings!">
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_test_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_test_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_test_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_test_seed4321.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp5_PAMP_localrun_tanhUfirst__1__1714640760/events.out.tfevents.1714640782.VF-070237N.27688.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp5_PAMP_localrun_tanhUfirst__1__1714640760/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp8.1_PAMP_localrun_NoTWEmbeddings__1__1714727308/events.out.tfevents.1714727327.VF-070237N.20392.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runs/cvrp-v2__exp8.1_PAMP_localrun_NoTWEmbeddings__1__1714727308/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_validation_seed4321.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_validation_seed4321.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_validation_seed4321.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_validation_seed4321.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_datasets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate_vrp_with_tw.py" beforeDir="false" afterPath="$PROJECT_DIR$/validate_vrp_with_tw.py" afterDir="false" />
-    </list>
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="added PAMP method. pointer amplifier for hard time constraints. Added new environment, attention score amplifier in wrapper, which in turn scale the attention score in decoder, and also added tw to embeddings!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
