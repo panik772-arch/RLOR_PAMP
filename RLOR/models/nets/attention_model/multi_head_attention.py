@@ -63,7 +63,7 @@ class AttentionScore(nn.Module):
             # so we want to attend to nodes with high time pressure
             # if the deadline is behind the already traveled time, it can result in -ratio, so handle this case too.
             time_ratio = torch.where((ratio > 1) | (ratio < 0), float("-inf"), ratio)
-           #first tanh to project u between -1 and 1
+            #first tanh to project u between -1 and 1
 
             #u = torch.tanh(u)
             # add linear time factor and clipping

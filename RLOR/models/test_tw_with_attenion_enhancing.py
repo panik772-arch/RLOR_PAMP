@@ -184,7 +184,7 @@ if __name__ == "__main__":
     learning_rate = 0.01
     K_factor = V = 50
     max_nodes = 10
-    time_scale = 2000
+    time_scale = 10000
     problem = "cvrp_fleet_tw"
     # training env setup
     envs = SyncVectorEnv(

@@ -61,7 +61,7 @@ def generate_vrp_with_tw_data(dataset_size, vrp_size, area_scale):
         np.random.uniform(size=(dataset_size, 2)).tolist(),  # Depot location
         np.random.uniform(size=(dataset_size, vrp_size, 2)).tolist(),  # Node locations
         np.random.randint(1, 10, size=(dataset_size, vrp_size)).tolist(),  # Demand, uniform integer 1 ... 9
-        np.random.randint(50, area_scale , size=(dataset_size, vrp_size)).tolist(),  # Demand, uniform integer 1 ... 9
+        np.random.randint(100, area_scale , size=(dataset_size, vrp_size)).tolist(),  # Demand, uniform integer 1 ... 9
         np.full(dataset_size, CAPACITIES[vrp_size]).tolist()  # Capacity, same for whole dataset
     ))
 
@@ -148,7 +148,7 @@ if __name__ == "__main__":
                         help="Distributions to generate for problem, default 'all'.")
 
     parser.add_argument("--dataset_size", type=int, default=10000, help="Size of the dataset")
-    parser.add_argument("--area_scale", type=int, default=12000, help="Size of the dataset")
+    parser.add_argument("--area_scale", type=int, default=10000, help="Size of the dataset")
     parser.add_argument('--graph_sizes', type=int, nargs='+', default=[20, 50, 100, 500],
                         help="Sizes of problem instances (default 20, 50, 100)")
     parser.add_argument("-f", action='store_true', help="Set true to overwrite")

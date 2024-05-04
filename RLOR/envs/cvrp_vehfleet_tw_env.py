@@ -35,7 +35,7 @@ class CVRPFleetTWEnv(gym.Env):
         obs_dict = {"observations": spaces.Box(low=0, high=1, shape=(self.max_nodes, 2))}
         obs_dict["depot"] = spaces.Box(low=0, high=1, shape=(2,))
         obs_dict["demand"] = spaces.Box(low=0, high=1, shape=(self.max_nodes,))
-        obs_dict["tw"] = spaces.Box(low=0, high=self.region_scale, shape=(self.max_nodes,))
+        obs_dict["tw"] = spaces.Box(low=0, high=self.region_scale+1, shape=(self.max_nodes,))
 
         obs_dict["action_mask"] = spaces.MultiBinary(
             [self.n_traj, self.max_nodes + 1]
@@ -183,7 +183,7 @@ class CVRPFleetTWEnv(gym.Env):
         )
 
         self.tw = (
-                np.random.randint(low=50, high=self.region_scale, size=self.max_nodes) ##self.region_scale
+                np.random.randint(low=100, high=self.region_scale, size=self.max_nodes) ##self.region_scale
                 #/ self.region_scale #nomalize this
         )
 

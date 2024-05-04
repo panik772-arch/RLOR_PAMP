@@ -14,7 +14,6 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 
-
 def parse_args():
     # fmt: off
     parser = argparse.ArgumentParser()
@@ -42,15 +41,15 @@ def parse_args():
         help="the id of the environment")
     parser.add_argument("--env-entry-point", type=str, default="envs.cvrp_vehfleet_tw_env:CVRPFleetTWEnv",
         help="the path to the definition of the environment, for example `envs.cvrp_vector_env:CVRPVectorEnv` if the `CVRPVectorEnv` class is defined in ./envs/cvrp_vector_env.py")
-    parser.add_argument("--total-timesteps", type=int, default=6_000_000, #_000
+    parser.add_argument("--total-timesteps", type=int, default=6_000_000_000, #000_000
         help="total timesteps of the experiments")
     parser.add_argument("--learning-rate", type=float, default=1e-3,
         help="the learning rate of the optimizer")
     parser.add_argument("--weight-decay", type=float, default=0,
         help="the weight decay of the optimizer")
-    parser.add_argument("--num-envs", type=int, default=1024,
+    parser.add_argument("--num-envs", type=int, default=1024, #1024
         help="the number of parallel game environments")
-    parser.add_argument("--num-steps", type=int, default=120,
+    parser.add_argument("--num-steps", type=int, default=100,
         help="the number of steps to run in each environment per policy rollout")
     parser.add_argument("--anneal-lr", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="Toggle learning rate annealing for policy and value networks")
@@ -60,7 +59,7 @@ def parse_args():
         help="the lambda for the general advantage estimation")
     parser.add_argument("--num-minibatches", type=int, default=8,
         help="the number of mini-batches")
-    parser.add_argument("--update-epochs", type=int, default=2,
+    parser.add_argument("--update-epochs", type=int, default=2, #orig 2
         help="the K epochs to update the policy")
     parser.add_argument("--norm-adv", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="Toggles advantages normalization")
@@ -398,7 +397,7 @@ if __name__ == "__main__":
                     if args.multi_greedy_inference:
                         if args.problem == 'tsp':
                             action = torch.arange(args.n_traj).repeat(args.n_test, 1)
-                        elif args.problem == 'cvrp':
+                        elif args.problem == 'cvrp' or args.problem == 'cvrp_fleet_tw' or args.problem == 'cvrp_fleet':
                             action = torch.arange(1, args.n_traj + 1).repeat(args.n_test, 1)
                 # TRY NOT TO MODIFY: execute the game and log data.
                 test_obs, _, _, test_info = test_envs.step(action.cpu().numpy())

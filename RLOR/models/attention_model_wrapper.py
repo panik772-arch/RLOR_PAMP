@@ -1,8 +1,6 @@
 import numpy as np
 import torch
-
 from .nets.attention_model.attention_model import *
-
 
 class Problem:
     def __init__(self, name):
@@ -60,9 +58,7 @@ class Backbone(nn.Module):
     def decode(self, obs, cached_embeddings):
         state = stateWrapper(obs, device=self.device, problem=self.problem.NAME, k = self.k)
         logits, glimpse = self.decoder.advance(cached_embeddings, state)
-
         return logits, glimpse
-
 
 class Actor(nn.Module):
     def __init__(self):
@@ -208,9 +204,7 @@ class stateWrapper:
         # Compute squared distances
         squared_diff = (all_nodes_exp - current_node_coords_exp) ** 2
         dist_matrix = torch.sqrt(squared_diff.sum(dim=-1))
-
         return dist_matrix
-
 
     def tw_ratio(self):
         if self.v_ms is None:
@@ -231,14 +225,14 @@ class stateWrapper:
         ones = torch.ones((num_batches, num_traj), dtype=deadlines.dtype, device=deadlines.device)
         deadlines_requested = torch.cat((ones[:,:,None]+self.scale, deadlines), dim=-1)
 
-        ratio = calculate_times_from_this_to_all / deadlines_requested
-
+        ratio = calculate_times_from_this_to_all / (deadlines_requested + 1e-5)
+        if torch.isnan(ratio).any():
+            print("nna in ratio", ratio)
         return ratio, deadlines_requested, traveled_time, calculate_times_from_this_to_all
 
     #depricated
     def times_to_reach_all_nodes(self):
         '''
-
         Returns:
             ratio -> factor for the attention enhancement (B,traj, N)
             difference_factor - difference between the give tw in env and the already traveled+predicted times to reach the customers (B,traj, N)
