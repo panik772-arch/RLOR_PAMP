@@ -93,13 +93,14 @@ def make_routes(traj):
 
     return routes_dict
 
-def plot_agent_solution(res_traj_with_depot, customers, depot, ax ):
+def plot_agent_solution(res_traj_with_depot, customers, depot, ax, demand ):
 
     #customers = obs['observations'][0]
     # traj = [0,1,2,3,0...]
 
     #num_locs = len() + len(depot.shape)
     x_coords, y_coords = customers.T
+
 
     # These are the depots
     kwargs = dict(c="tab:red", marker="*", zorder=3, s=500)
@@ -120,6 +121,7 @@ def plot_agent_solution(res_traj_with_depot, customers, depot, ax ):
 
         x = x_coords[route-1]
         y = y_coords[route-1]
+        d = demand[route-1]
         # Coordinates of clients served by this route.
         ax.scatter(x, y, label=f"Route {idx}", zorder=3, s=75)
         ax.plot(x, y)
@@ -130,6 +132,9 @@ def plot_agent_solution(res_traj_with_depot, customers, depot, ax ):
         ax.plot([depot[0], x[0]], [depot[1], y[0]], **kwargs)
         ax.plot([x[-1], depot[0]], [y[-1], depot[1]], **kwargs)
 
+        # Add customer indexes as annotations
+        for i, (xc, yc) in enumerate(zip(x, y), start=1):
+            ax.annotate(str(d[i - 1]), (xc, yc), textcoords="offset points", xytext=(0, 5), ha='center', fontsize=8)
 
     ax.grid(color="grey", linestyle="solid", linewidth=0.2)
     ax.set_title("Solution RL-Agent")

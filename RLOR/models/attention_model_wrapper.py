@@ -227,7 +227,7 @@ class stateWrapper:
 
         ratio = calculate_times_from_this_to_all / (deadlines_requested + 1e-5)
         if torch.isnan(ratio).any():
-            print("nna in ratio", ratio)
+            print("nan in ratio", ratio)
         return ratio, deadlines_requested, traveled_time, calculate_times_from_this_to_all
 
     #depricated
@@ -243,7 +243,7 @@ class stateWrapper:
         '''
         v = self.v
         if self.v is None:
-            v = 10
+            v = 0.0014
 
         traveled_time = self.get_traveled_dist()/v #(5,1)
 

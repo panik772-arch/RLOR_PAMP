@@ -1,7 +1,6 @@
 import gym
 import numpy as np
 from gym import spaces
-
 from .vrp_data_with_tw import VRPDatasetTW
 
 
@@ -29,17 +28,16 @@ class CVRPFleetTWEnv(gym.Env):
         self.eval_data_idx = 0
         self.demand_limit = 10
         self.penalty = 10
+        self.min_tw = 50
+        self.max_tw = 10000
         self.region_scale = 10000 # 10kmx10km region for time-windows. We need this to distribute the tw for further calculation in attentionModelWrapper
         assign_env_config(self, kwargs)
 
         obs_dict = {"observations": spaces.Box(low=0, high=1, shape=(self.max_nodes, 2))}
         obs_dict["depot"] = spaces.Box(low=0, high=1, shape=(2,))
         obs_dict["demand"] = spaces.Box(low=0, high=1, shape=(self.max_nodes,))
-        obs_dict["tw"] = spaces.Box(low=0, high=self.region_scale+1, shape=(self.max_nodes,))
-
-        obs_dict["action_mask"] = spaces.MultiBinary(
-            [self.n_traj, self.max_nodes + 1]
-        )  # 1: OK, 0: cannot go
+        obs_dict["tw"] = spaces.Box(low=0, high=self.max_tw+1, shape=(self.max_nodes,))
+        obs_dict["action_mask"] = spaces.MultiBinary([self.n_traj, self.max_nodes + 1])  # 1: OK, 0: cannot go
         obs_dict["last_node_idx"] = spaces.MultiDiscrete([self.max_nodes + 1] * self.n_traj)
         obs_dict["current_load"] = spaces.Box(low=0, high=1, shape=(self.n_traj,))
         obs_dict["traveled_dist"] = spaces.Box(low=0, high=10, shape=(self.n_traj,))
@@ -168,7 +166,7 @@ class CVRPFleetTWEnv(gym.Env):
         return self.state
 
     def _load_orders(self):
-        data = VRPDatasetTW[self.eval_partition, self.max_nodes, self.eval_data_idx, self.region_scale]
+        data = VRPDatasetTW[self.eval_partition, self.max_nodes, self.eval_data_idx, self.min_tw, self.max_tw]
         self.nodes = np.concatenate((data["depot"][None, ...], data["loc"]))
         self.demands = data["demand"]
         self.tw = data["tw"]
@@ -183,7 +181,7 @@ class CVRPFleetTWEnv(gym.Env):
         )
 
         self.tw = (
-                np.random.randint(low=100, high=self.region_scale, size=self.max_nodes) ##self.region_scale
+                np.random.randint(low=self.min_tw, high=self.max_tw, size=self.max_nodes) ##self.region_scale
                 #/ self.region_scale #nomalize this
         )
 

@@ -17,7 +17,7 @@ def AutoContext(problem_name, config):
         "pctsp": PCTSPContext,
         "op": OPContext,
         "cvrp_fleet": CVRPFleetContext,
-        "cvrp_fleet_tw": CVRPFleetTwContext,
+        "cvrp_fleet_tw": CVRPFleetContext #CVRPFleetTwContext,
     }
     embeddingClass = mapping[problem_name]
     embedding = embeddingClass(**config)
@@ -280,7 +280,8 @@ class CVRPFleetTwContext(PrevNodeContext):
     def _state_embedding(self, embeddings, state):
         state_embedding = -state.used_capacity[:, :, None]
 
-        traveled_time = state.get_traveled_dist() / state.v_ms
+        traveled_time = state.get_traveled_dist() #/ state.v_ms  #I need values between 0 and 1...to achiev normalized small values, this is not correct physically, but maybe it will improve the training
+
 
         vehicles = state.get_num_veh()
         state_embedding = torch.cat((state_embedding, traveled_time[:,:,None],vehicles[:,:, None]),-1) #(1024,35,2)

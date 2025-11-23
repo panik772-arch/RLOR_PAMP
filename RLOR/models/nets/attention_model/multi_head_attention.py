@@ -54,7 +54,7 @@ class AttentionScore(nn.Module):
 
     def forward(self, query, key, mask=torch.zeros([], dtype=torch.bool), state = None ):
         u = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(query.size(-1))
-
+        time_ratio = 0
         if state is not None and state.problem == "cvrp_fleet_tw":
             self.use_tanh = True
             ratio, _,_,_ = state.tw_ratio()
@@ -67,7 +67,7 @@ class AttentionScore(nn.Module):
 
             #u = torch.tanh(u)
             # add linear time factor and clipping
-            u = (u + time_ratio) #* self.C
+            u = u #(u + time_ratio) #* self.C
             #u = u * self.C
 
             #transformed_distances, _ = state.return_topK_closest()
@@ -76,7 +76,7 @@ class AttentionScore(nn.Module):
             #u += transformed_distances
 
         if self.use_tanh:
-            logits = torch.tanh(u) * self.C
+            logits = (torch.tanh(u) + time_ratio) * self.C
         else:
             logits = u
             # Adjust mask if provided

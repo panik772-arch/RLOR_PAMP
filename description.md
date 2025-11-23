@@ -457,3 +457,43 @@ Dynamic Embeddings: ratio, deadlines_requested, traveled_time, calculate_times_f
         ratio_nodes = ratio.squeeze(-2)
 
 I Changed:  self.context_dim = embedding_dim + 3  in Embeddings, added to context the travel times and to the dynamic embeddings TW
+
+06.05.2024
+
+- my insight from multiple train runs is...The tw and context do not work if you train it with PAMP. 
+- the method could converge ONLY if I set up context and embeddings the same as in normal CVRPfleetEnv and do not provide additional informations..smhw..
+- so, its important, now I ONLY train with pure attention score enhancing in pointer, without any additional features. WHy the network can not capture time information? Idk...maybe we need to provide any feedback in environment as well, so this information is somehow reflected in training and there is some signal from the environment...
+- BUT: take this to you paper and describe: 
+
+Soft Constraints CVRP: 
+![Figure_check_the_PAMP_logits.png](Figure_check_the_PAMP_logits.png)
+
+![Figure_check_the_PAMP_routes.png](Figure_check_the_PAMP_routes.png)
+
+for validation_vrp_with_tw and this settings:
+ max_nodes = 10
+    n_traj = 10
+    eval_data = False
+    eval_partition = "eval"
+    eval_data_idx = 0
+    region_scale = 10000
+    min_tw = 0
+    max_tw = 100
+    vehicles = 5
+    v = 50 #speed in km/h
+    prize_for_visiting = 10000 #10000 #2000 min and 10000 max
+    seed = 1234
+    ckpt_path =  "C:\\rlor_pamp_trained_models\\exp8.3_herakles_noEMbeddingsAndContext\\800.pt"
+
+- the heatmap fits very good to the routes. it selects best logits..the n4 node is than -10 because the tw is expired...so its more soft constraints?
+
+- if you want to implement HARD constraint, then use:
+- 
+-         if self.use_tanh:
+            logits = (torch.tanh(u)+time_ratio) * self.C
+Tha we have hard constrained VRP like this: 
+![Figure_check_the_PAMP_logits_HARD_Constraints.png](Figure_check_the_PAMP_logits_HARD_Constraints.png)
+![Figure_check_the_PAMP_logits_HARD_Constraints_Routes.png](Figure_check_the_PAMP_logits_HARD_Constraints_Routes.png)
+
+08.05.2024
+- I suppose, that my PAMP method with context and embeddings, where I add the time windows to embeddings and traveled time to context, didn't work because I didn't normalize these values....can it be true?

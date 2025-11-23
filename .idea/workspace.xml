@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="added PAMP method. pointer amplifier for hard time constraints. Added new environment, attention score amplifier in wrapper, which in turn scale the attention score in decoder, and also added tw to embeddings!">
+      <change afterPath="$PROJECT_DIR$/Figure_check_the_PAMP_logits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Figure_check_the_PAMP_routes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rlor_vrp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rlor_vrp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_test_seed1234.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_test_seed1234.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw100_validation_seed4321.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_test_seed1234.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_test_seed1234.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw20_validation_seed4321.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_test_seed1234.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_test_seed1234.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw500_validation_seed4321.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_test_seed1234.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_test_seed1234.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_validation_seed4321.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vrp_tw/vrp_with_tw/vrp_with_tw50_validation_seed4321.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_and_plot_trained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_collab_notesLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/train_collab_notesLog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate_vrp_with_tw.py" beforeDir="false" afterPath="$PROJECT_DIR$/validate_vrp_with_tw.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,19 +41,27 @@
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="7b470f71956c4a318060360fb93896e876d1623e" />
         <entry key="$PROJECT_DIR$/RLOR" value="main" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/Anaconda3/envs/rlor_vrp/Lib/site-packages/gym/envs/registration.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/Anaconda3/envs/rlor_vrp/Lib/site-packages/numpy/core/arrayprint.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/PyCharmCE2024.1/python_stubs/817518621/pyvrp/_pyvrp.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/anaconda3/Lib/site-packages/pyvrp/Model.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/anaconda3/Lib/site-packages/pyvrp/Result.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/anaconda3/Lib/site-packages/pyvrp/plotting/plot_solution.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2cSCENABZmKuZFBjnbizfCBtUD6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,10 +73,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.ppo_or.executor": "Debug",
+    "Python.validate_vrp_with_tw.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/dein_el/PycharmProjects/rlor_vrp/RLOR/envs",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "git-widget-placeholder": "ed982024",
+    "last_opened_file_path": "C:/Users/dein_el/IdeaProjects/tsp_solver",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -88,9 +98,10 @@
       <recent name="C:\Users\dein_el\PycharmProjects\rlor_vrp\runs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ppo_or">
+  <component name="RunManager" selected="Python.validate_vrp_with_tw">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="rlor_vrp" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -112,6 +123,7 @@
     </configuration>
     <configuration name="ppo_or" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -133,6 +145,7 @@
     </configuration>
     <configuration name="test_and_plot_trained_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -154,6 +167,7 @@
     </configuration>
     <configuration name="test_dist_matrxs_for_attention_enhancing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -175,6 +189,7 @@
     </configuration>
     <configuration name="test_tw_with_attenion_enhancing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -196,6 +211,7 @@
     </configuration>
     <configuration name="validate_vrp_with_tw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rlor_vrp" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -217,13 +233,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ppo_or" />
         <item itemvalue="Python.validate_vrp_with_tw" />
+        <item itemvalue="Python.ppo_or" />
         <item itemvalue="Python.test_tw_with_attenion_enhancing" />
         <item itemvalue="Python.test_and_plot_trained_model" />
         <item itemvalue="Python.test_dist_matrxs_for_attention_enhancing" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -354,7 +377,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -499,12 +534,12 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
-          <line>248</line>
+          <line>253</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
-          <line>254</line>
+          <line>259</line>
           <option name="timeStamp" value="217" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -574,11 +609,6 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="291" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
           <line>54</line>
           <option name="timeStamp" value="292" />
         </line-breakpoint>
@@ -618,11 +648,6 @@
           <option name="timeStamp" value="361" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
-          <line>137</line>
-          <option name="timeStamp" value="403" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
           <line>389</line>
           <option name="timeStamp" value="406" />
@@ -646,6 +671,71 @@
           <url>file://$PROJECT_DIR$/RLOR/models/attention_model_wrapper.py</url>
           <line>268</line>
           <option name="timeStamp" value="426" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="439" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="440" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/models/nets/attention_model/multi_head_attention.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="442" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
+          <line>449</line>
+          <option name="timeStamp" value="444" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/envs/vrp_data_with_tw.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="446" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
+          <line>309</line>
+          <option name="timeStamp" value="450" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RLOR/ppo_or.py</url>
+          <line>206</line>
+          <option name="timeStamp" value="454" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
+          <line>305</line>
+          <option name="timeStamp" value="456" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
+          <line>136</line>
+          <option name="timeStamp" value="457" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="458" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_and_plot_trained_model.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="459" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
+          <line>359</line>
+          <option name="timeStamp" value="460" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/validate_vrp_with_tw.py</url>
+          <line>393</line>
+          <option name="timeStamp" value="462" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

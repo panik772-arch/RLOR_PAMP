@@ -1,0 +1,12 @@
+Metric,Heuristic (PyVRP),RL (DAR_RL)
+
+Solution Cost,2.9432,35.8112
+Solving Time (seconds),38.5757,67.9445
+Customers Served,78,149
+% Customers Served,7.80%,14.90%
+
+Total Customers,1000,1000
+
+Performance Comparison
+Cost Difference (%),-1316.75% (RL better)
+Time Speedup (Heuristic/RL),0.57x

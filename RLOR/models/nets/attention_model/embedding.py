@@ -17,7 +17,7 @@ def AutoEmbedding(problem_name, config):
         "pctsp": PCTSPEmbedding,
         "op": OPEmbedding,
         "cvrp_fleet": CVRPFleetEmbeddings,
-        "cvrp_fleet_tw": CVRPFleetTwEmbeddings #CVRPFleetEmbeddings, #CVRPFleetTwEmbeddings,
+        "cvrp_fleet_tw": CVRPFleetEmbeddings, #CVRPFleetTwEmbeddings,
     }
     embeddingClass = mapping[problem_name]
     embedding = embeddingClass(**config)
@@ -275,9 +275,14 @@ class CVRPFleetTwEmbeddings(nn.Module):
         # batch, 1, 2 -> batch, 1, embedding_dim
         depot_embedding = self.init_embed_depot(input["depot"])[:, None, :]
         # [batch, n_customer, 2, batch, n_customer, 1]  -> batch, n_customer, embedding_dim
+        tw_ = input["tw"]
+
+        mean, std, var = torch.mean(tw_), torch.std(tw_), torch.var(tw_)
+
+        tw_normalized = (tw_ - mean) / std
 
         node_embeddings = self.init_embed(
-            torch.cat((input["loc"], input["demand"][:, :, None], input["tw"][:, :,None]), -1)
+            torch.cat((input["loc"], input["demand"][:, :, None], tw_normalized[:, :,None]), -1)
         )
         # batch, n_customer+1, embedding_dim
         out = torch.cat((depot_embedding, node_embeddings), 1)
