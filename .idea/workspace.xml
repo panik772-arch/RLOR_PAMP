@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="added PAMP method. pointer amplifier for hard time constraints. Added new environment, attention score amplifier in wrapper, which in turn scale the attention score in decoder, and also added tw to embeddings!">
-      <change afterPath="$PROJECT_DIR$/Figure_check_the_PAMP_logits.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Figure_check_the_PAMP_routes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rlor_vrp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rlor_vrp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description.md" beforeDir="false" afterPath="$PROJECT_DIR$/description.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_and_plot_trained_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_and_plot_trained_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_collab_notesLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/train_collab_notesLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate_vrp_with_tw.py" beforeDir="false" afterPath="$PROJECT_DIR$/validate_vrp_with_tw.py" afterDir="false" />
-    </list>
+    <list default="true" id="ba02fceb-bbae-4e4f-be3a-d63ede9d4b8e" name="Changes" comment="added PAMP method. pointer amplifier for hard time constraints. Added new environment, attention score amplifier in wrapper, which in turn scale the attention score in decoder, and also added tw to embeddings!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +67,7 @@
     "Python.validate_vrp_with_tw.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ed982024",
+    "git-widget-placeholder": "1a85c962",
     "last_opened_file_path": "C:/Users/dein_el/IdeaProjects/tsp_solver",
     "settings.editor.selected.configurable": "configurable.group.appearance"
   }
