@@ -1,2 +1,0 @@
-Here is original code with two branches_rlor_fleet and rlor_fleet with DAR method is implemented.
-All the development and commets originates from here! 

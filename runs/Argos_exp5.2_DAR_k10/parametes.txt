@@ -1,4 +1,0 @@
-k = 10
-penalty = 10
-4 test and eval files form 20 - 75
-
