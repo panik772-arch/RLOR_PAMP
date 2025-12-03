@@ -21,8 +21,7 @@ def make_segments(x, y):
 def colorline(x, y, z=None, cmap=plt.get_cmap('copper'), norm=plt.Normalize(0.0, 1.0), linewidth=1, alpha=1.0):
     '''
     Plot a colored line with coordinates x and y
-    Optionally specify colors in the array z
-    Optionally specify a colormap, a norm function and a line width
+  
     '''
 
     # Default colors equally spaced on [0,1]:
