@@ -342,8 +342,7 @@ if __name__ == "__main__":
     # 8000 -> 6.33
     # 4000 -> 6.90 (or is 6.98
     # with 500 customers, 2000.pt -> 7.95 and 20000 5.03 and 8000.pt -> 3.07 and 10000.pt 3.11
-    ckpt_path = "C:\\rlor_pamp_trained_models\\exp8.3_herakles_noEMbeddingsAndContext\\8000.pt"  # "runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt" #"RLOR_PAMP/runs/cvrp-v1__ppo_or__1__1714136363/ckpt/4.pt" #"runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt"  # "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
-    # "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/5000.pt"#"runs/athene_exp3.3/cvrp-v1__exp3.3_vf-athena_cluster_local_runtime_2__1__1712077050/ckpt/1000.pt" #
+    ckpt_path = "XXXXX\\8000.pt" 
 
     obs, envs = make_env(seed= seed, n_traj=n_traj, vehicles = vehicles, max_nodes=max_nodes,min_tw=min_tw, max_tw=max_tw)
     nodes = obs["observations"][0]
