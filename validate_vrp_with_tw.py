@@ -12,13 +12,13 @@ from pyvrp import Model
 from pyvrp.stop import MaxRuntime, NoImprovement, MaxIterations
 from pyvrp.plotting import plot_solution
 
-from RLOR.envs.cvrp_vehfleet_tw_env import CVRPFleetTWEnv
-from RLOR.envs.vrp_data_with_tw import VRPDatasetTW
+from RLOR_PAMP.envs.cvrp_vehfleet_tw_env import CVRPFleetTWEnv
+from RLOR_PAMP.envs.vrp_data_with_tw import VRPDatasetTW
 import torch
 import gym
-from RLOR.models.attention_model_wrapper import Agent
-from RLOR.wrappers.syncVectorEnvPomo import SyncVectorEnv
-from RLOR.wrappers.recordWrapper import RecordEpisodeStatistics
+from RLOR_PAMP.models.attention_model_wrapper import Agent
+from RLOR_PAMP.wrappers.syncVectorEnvPomo import SyncVectorEnv
+from RLOR_PAMP.wrappers.recordWrapper import RecordEpisodeStatistics
 from test_and_plot_trained_model import plot_agent_solution, calculate_demand, make_routes
 
 def plot_logits(logits, tw, max_tw):
@@ -69,7 +69,7 @@ def make_env(seed,n_traj, vehicles, max_nodes, min_tw, max_tw):
     env_ = CVRPFleetTWEnv()
 
     env_id = 'cvrp-v1'
-    env_entry_point = 'RLOR.envs.cvrp_vehfleet_tw_env:CVRPFleetTWEnv'
+    env_entry_point = 'RLOR_PAMP.envs.cvrp_vehfleet_tw_env:CVRPFleetTWEnv'
 
     gym.envs.register(
         id=env_id,
@@ -312,8 +312,8 @@ def count_customers_served_rl(routes):
     return len(customers_served)
 
 if __name__ == "__main__":
-    max_nodes = 1000
-    n_traj = 1000
+    max_nodes = 50
+    n_traj = 50
     eval_data = False
     eval_partition = "eval"
     eval_data_idx = 0
@@ -322,7 +322,12 @@ if __name__ == "__main__":
     max_tw = 10000
     vehicles = 5
     v = 0.0014 #50 #speed in km/h
-    prize_for_visiting = 750 #10000 #2000 min and 10000 max
+    # Prize Factors for dif. instances
+    # 50a,1234 -> 11500 and 50b, 4321 -> 4950
+    # 100a, 1234 -> 3100  and 4321 -> 2000
+    # 500a, 1234 -> 750 and 500b,4321 -> 950
+    # 1000a with 1234 -> 600 and 1000c with 3241 ->  550
+    prize_for_visiting = 11500
     seed = 1234
     MaxRunTime = 10000
 
@@ -337,7 +342,7 @@ if __name__ == "__main__":
     # 8000 -> 6.33
     # 4000 -> 6.90 (or is 6.98
     # with 500 customers, 2000.pt -> 7.95 and 20000 5.03 and 8000.pt -> 3.07 and 10000.pt 3.11
-    ckpt_path = "C:\\rlor_pamp_trained_models\\exp8.3_herakles_noEMbeddingsAndContext\\8000.pt"  # "runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt" #"RLOR/runs/cvrp-v1__ppo_or__1__1714136363/ckpt/4.pt" #"runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt"  # "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
+    ckpt_path = "C:\\rlor_pamp_trained_models\\exp8.3_herakles_noEMbeddingsAndContext\\8000.pt"  # "runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt" #"RLOR_PAMP/runs/cvrp-v1__ppo_or__1__1714136363/ckpt/4.pt" #"runs/cvrp-v2__exp5_PAMP_localrun__1__1714518031/ckpt/100.pt"  # "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/8000.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.1_with_AttentionScore_Enhancing__1__1712436040/ckpt/390.pt" #"runs/cvrp-v1__exp4.0_with_AttentionScore_Enhancing__1__1712328992/ckpt/200.pt"
     # "runs/argos_exp3.2/cvrp-v1__exp3.2_vf-argos_cluster_local_runtime__1__1711632522/ckpt/5000.pt"#"runs/athene_exp3.3/cvrp-v1__exp3.3_vf-athena_cluster_local_runtime_2__1__1712077050/ckpt/1000.pt" #
 
     obs, envs = make_env(seed= seed, n_traj=n_traj, vehicles = vehicles, max_nodes=max_nodes,min_tw=min_tw, max_tw=max_tw)
@@ -410,6 +415,7 @@ if __name__ == "__main__":
         if len(route) != 0:  # Ensure the route is not empty
             customer_demands = np.sum(demand_with_depot[route])  # Current customer
             total_demand += customer_demands
+
 
     device = 'cpu'
     agent = Agent(device=device, name='cvrp_fleet_tw', k=50).to(device)

@@ -1,4 +1,4 @@
-# @title Helper function for plotting
+ # @title Helper function for plotting
 # colorline taken from https://nbviewer.org/github/dpsanders/matplotlib-examples/blob/master/colorline.ipynb
 import matplotlib.pyplot as plt
 import numpy as np
